@@ -1,0 +1,66 @@
+---
+title: 'Biosis API'
+description: 'Biosis is a platform that helps farmers manage their fertilisation schedule by reminding them on the daily basis about the amount and type of fertilisers to use, the reminder also takes into consider the weather conditions via an open weather api. It is by far the project I am most proud of.'
+image: 'https://res.cloudinary.com/maalik-dev/image/upload/v1694105660/378417DA-1BD0-48EC-BBC6-1607DAC1DC36_ldmwua.png'
+thumbnail: 'https://res.cloudinary.com/maalik-dev/image/upload/v1694106946/Screenshot_2023-09-07_at_10.07.09_PM_kb0x3o.png'
+linkSourceCode: 'https://gitlab.com/biosisplant/biosis-api'
+stacks:
+  ['Python', 'Django', 'GitLab', 'Terraform', 'AWS', 'GraphQL', 'Firebase']
+isShow: true
+isFeatured: true
+---
+
+## Introduction
+
+This project serves as the API backend for the platform and is built using cutting edge tech resulting in great maintainability and productivity
+
+## Features
+
+This project is packed with Industry wide best practices with **great attention to detail.** Listing some of the best features below.
+
+### 💻 Infastructure As Code (IaC)
+
+The entire infrastructure required for this project including but not limited to the Database, ECS Container, Cloud-front CDN, S3 Bucket, Custom Domains, and Private Networks has been configured through code (Terraform) which allows complete automation over infrastructure provisioning, and multiple environments can be spun up and destroyed predictably and consistently. Here is an example of provisioning the database.
+
+```tf
+resource "aws_db_instance" "postgres" {
+  identifier             = "${local.prefix}-db"
+  allocated_storage      = 20
+  storage_type           = "gp2"
+  engine                 = "postgres"
+  instance_class         = "db.t2.micro"
+  name                   = lower(var.project)
+  password               = random_password.postgres.result
+  username               = random_pet.user.id
+  multi_az               = false
+  vpc_security_group_ids = [aws_security_group.rds.id]
+  tags                   = local.tags
+  # Conditional Settings
+  skip_final_snapshot       = terraform.workspace == "production" ? false : true
+  backup_retention_period   = terraform.workspace == "production" ? 7 : 0
+  copy_tags_to_snapshot     = terraform.workspace == "production" ? true : false
+  final_snapshot_identifier = "${local.prefix}-postgres-snapshot"
+}
+```
+
+### 🤖 CI/CD Automation
+
+The project includes complete automation via **GitLab CI** including support for multiple environments. Whenever code is pushed on a protected branch the pipeline runs validates the terraform configuration, builds the docker image and then applies the terraform configuration.
+
+### 🔔 Push Notifications
+
+Push notifications are sent to the mobile client using firebase. A periodic task has been setup on the backend to send notifications everyday at a particular time to all the concerned farmers.
+
+### 🕸️ GraphQL APIs
+
+The project implements GraphQL APIs to the most flexibility to the client whilst minimizing development effors. Since the entire schema is tightly controlled the client can introspect the server and get amazing autocompletion on the front-end minimizing human error.
+
+![GraphQL Schema](https://res.cloudinary.com/maalik-dev/image/upload/v1694105660/87670486-58B7-45A4-A77D-8EEC6969FAA8_nxlg86.png)
+
+### 📅 Periodic Tasks
+
+The project uses Celery Beat and Redis for scheduling and running asynchronous periodic tasks.
+
+### ☁ Easy to deploy on AWS
+
+Can be easily deployed on AWS with the use of Terraform. Unfortunately I cannot keep this project live for a demo because it costs a considerable amount of money considering the sheer number of components in the Infastructure.

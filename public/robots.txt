@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://maalik.dev
+
+# Sitemaps
+Sitemap: https://maalik.dev/sitemap.xml
