@@ -1,5 +1,17 @@
 export const CAREERS = [
   {
+    position: 'Chief Technology Officer (CTO)',
+    company: 'Vesatogo Innovations',
+    logo: '/images/careers/vesatogo.png',
+    location: 'Nashik',
+    location_type: 'hybrid',
+    type: 'Fulltime',
+    start_date: '2023-08',
+    end_date: null,
+    industry: 'agritech',
+    link: 'https://www.linkedin.com/company/vesatogo/',
+  },
+  {
     position: 'Senior Software Developer',
     company: 'Vesatogo Innovations',
     logo: '/images/careers/vesatogo.png',
@@ -7,7 +19,7 @@ export const CAREERS = [
     location_type: 'hybrid',
     type: 'Fulltime',
     start_date: '2022-01',
-    end_date: null,
+    end_date: '2023-08',
     industry: 'agritech',
     link: 'https://www.linkedin.com/company/vesatogo/',
   },

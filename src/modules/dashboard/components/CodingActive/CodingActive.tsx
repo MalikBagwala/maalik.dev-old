@@ -40,7 +40,7 @@ const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
   return (
     <section className='flex flex-col gap-y-2'>
       <SectionHeading
-        title='Weekly Statistics'
+        title='Monthly Statistics'
         icon={<WakatimeIcon className='mr-1' />}
       />
       <SectionSubHeading>
@@ -52,7 +52,7 @@ const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
           >
             WakaTime
           </Link>
-          <span> last 7 days stats.</span>
+          <span> last 30 day stats.</span>
         </div>
         <div className='text-sm text-neutral-600 dark:text-neutral-500'>
           Last update: {renderLastUpdate()}
