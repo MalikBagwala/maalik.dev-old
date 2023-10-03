@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:https": "next dev -p 3001",
+    "proxy": "local-ssl-proxy --source 3001 --target 3000",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
