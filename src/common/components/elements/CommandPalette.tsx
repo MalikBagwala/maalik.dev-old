@@ -68,6 +68,7 @@ const CommandPalette = () => {
       title: 'SOCIALS',
       children: SOCIAL_MEDIA?.map((menu) => ({
         ...menu,
+        href: (menu.href || `https://api.maalik.dev/${menu.title}`) as string,
         closeOnSelect: true,
       })),
     },
@@ -150,7 +151,7 @@ const CommandPalette = () => {
     setAiFinished(false);
   };
 
-  const isActiveRoute = (href: string) => {
+  const isActiveRoute = (href?: string) => {
     return router.pathname === href;
   };
 
