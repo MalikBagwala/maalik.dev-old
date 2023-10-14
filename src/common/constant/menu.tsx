@@ -79,7 +79,6 @@ export const MENU_ITEMS: MenuItemProps[] = [
 export const SOCIAL_MEDIA: MenuItemProps[] = [
   {
     title: 'Email',
-    href: 'mailto:hello@maalik.dev',
     icon: <EmailIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
@@ -90,7 +89,6 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
 
   {
     title: 'Linkedin',
-    href: 'https://www.linkedin.com/in/MalikBagwala/',
     icon: <LinkedinIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
@@ -100,7 +98,6 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   },
   {
     title: 'Twitter',
-    href: 'https://twitter.com/MalikBagwala',
     icon: <TwitterIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
@@ -110,7 +107,6 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   },
   {
     title: 'Instagram',
-    href: 'https://instagram.com/@the_insane_bagwala',
     icon: <InstagramIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
@@ -120,7 +116,6 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   },
   {
     title: 'Github',
-    href: 'https://github.com/MalikBagwala',
     icon: <GithubIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
