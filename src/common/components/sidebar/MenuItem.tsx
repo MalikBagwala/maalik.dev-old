@@ -80,7 +80,7 @@ const MenuItem = ({
 
   return isHashLink ? (
     <div className='cursor-pointer'>{itemComponent()}</div>
-  ) : (
+  ) : href ? (
     <Link
       href={href}
       target={isExternalUrl ? '_blank' : ''}
@@ -88,7 +88,7 @@ const MenuItem = ({
     >
       {itemComponent()}
     </Link>
-  );
+  ) : null;
 };
 
 export default MenuItem;
