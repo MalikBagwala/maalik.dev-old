@@ -2,7 +2,7 @@
   <h1>maalik.dev</h1>
    <img height="400px" width="auto" src="https://res.cloudinary.com/maalik-dev/image/upload/v1694112941/maalik-dev-mac_m4w7tc.png">
    <img height="400px" height="auto" src="https://res.cloudinary.com/maalik-dev/image/upload/v1694112004/733E9B05-B825-4A3A-B6D4-CCBA98B1DE0E_ill6kz.png">
-  <p>🔥 Personal website built with Next.js, TypeScript, Tailwind CSS, SWR</p>
+  <p>🔥 Personal website built with Next.js, TypeScript, Tailwind CSS, SWR.</p>
 </div>
 <br />
 
