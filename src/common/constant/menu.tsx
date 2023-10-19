@@ -128,7 +128,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
 export const EXTERNAL_LINKS: MenuItemProps[] = [
   {
     title: 'Analytics',
-    href: 'https://umami.maalik.dev/share/LK5kiRuosw9pORLa/maalik.dev',
+    href: 'https://analytics.eu.umami.is/share/qApLA9YdTiAOHGhx/maalik.dev',
     icon: <AnalyticsIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
