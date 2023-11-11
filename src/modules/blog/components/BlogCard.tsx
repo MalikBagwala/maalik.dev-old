@@ -30,7 +30,6 @@ const BlogCard = ({
   isCarousel = false,
 }: BlogCardProps) => {
   const [viewOption, setViewOption] = useState<string>(view);
-  console.log(total_views_count);
 
   const { width } = useWindowSize();
   const isMobile = width < 468;
