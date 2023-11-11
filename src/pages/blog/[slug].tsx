@@ -1,8 +1,6 @@
-import axios from 'axios';
 import { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-import { useEffect } from 'react';
 
 import BackButton from '@/common/components/elements/BackButton';
 import Container from '@/common/components/elements/Container';
@@ -29,21 +27,6 @@ const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
   const canonicalUrl = `https://maalik.dev/${slug}`;
 
   blogData.blog_slug = slug;
-
-  const incrementViews = async () => {
-    try {
-      await axios.post(`/api/views?id=${blogData?.id}&slug=${slug}`);
-    } catch (error) {
-      // console.error('Failed to update views count:', error);
-    }
-  };
-
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      incrementViews();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <>

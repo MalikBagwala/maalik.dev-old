@@ -70,8 +70,12 @@ export const getBlogDetail = async ({
   if (status >= 400) {
     return { status, data: {} };
   }
+  const { data: vData } = await getBlogViews({ id });
 
-  const data = response.data;
+  const data = {
+    ...response.data,
+    total_views_count: vData?.page_views_count || 0,
+  };
 
   return {
     status,
