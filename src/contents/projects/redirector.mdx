@@ -1,0 +1,37 @@
+---
+title: 'Redirector'
+description: 'A simple URL Redirector with support for closest word matching built with GO as well as a simple web interface to manage the redirects.'
+image: 'https://res.cloudinary.com/maalik-dev/image/upload/v1698670469/83EB8AB8-2525-4F69-A100-D43BBDE030C8_drcqqh.png'
+thumbnail: 'https://res.cloudinary.com/maalik-dev/image/upload/v1699676733/Screenshot_2023-11-11_at_9.54.44_AM_b9ss9g.png'
+linkSourceCode: 'https://github.com/MalikBagwala/redirector'
+linkDemo: 'https://api.maalik.dev/'
+stacks: ['Go', 'Railway', 'GitHub', "HTML5"]
+isShow: true
+isFeatured: true
+---
+
+## 📖 Introduction
+
+This is a simple URL Redirector with support for closest word matching built with GO as well as a simple web interface to manage the redirects.
+
+## 📖 Closest Word Matching
+
+The redirector uses a library to find the closest matching word in the dictionary and then redirects to the corresponding URL. This is useful when the user makes a typo in the URL.
+eg. `api.maalik.dev/linkein` will redirect to `linkedin.com/in/malikbagwala`
+eg. `api.maalik.dev/linkedin` will redirect to `linkedin.com/in/malikbagwala`
+eg. `api.maalik.dev/inkedinasdinln` will redirect to `linkedin.com/in/malikbagwala`
+
+
+## 💿 Single Place For All Your Links
+
+The redirector can be used to create a single place for all your links. You can create a link for your website, your social media profiles, your blog, your resume, etc. and then share the link to your redirector. This way you can change the links without having to change the link in all the places you have shared it.
+
+There is also a web interface hosted at the root of the website (https://api.maalik.dev) which can be used to view all the links at once
+
+### 🤖 CI/CD Automation
+
+The project includes complete automation via **Railway**. The project is deployed to Railway on every push to the `main` branch.
+
+### 🔮 Future Scope
+
+1. Add support for creating and updating links via an admin interface and store it in a remote datastore or json file
