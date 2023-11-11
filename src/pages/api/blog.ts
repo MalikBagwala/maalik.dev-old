@@ -24,7 +24,7 @@ export default async function handler(
         const { page_views_count } = blogItem;
 
         const devtoViewsCount = page_views_count ?? 0;
-        const viewsCount = 'N/A';
+        const viewsCount = 0;
 
         return {
           ...blogItem,

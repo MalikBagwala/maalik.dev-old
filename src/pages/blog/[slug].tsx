@@ -118,10 +118,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const response = await getBlogDetail({ id: parseInt(blogId) });
 
-  if (
-    response?.status === 404 ||
-    response?.data?.user?.username !== 'MalikBagwala'
-  ) {
+  if (response?.status === 404 || response?.data?.user?.user_id !== 214537) {
     return {
       redirect: {
         destination: '/404',
