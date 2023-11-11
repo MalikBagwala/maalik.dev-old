@@ -1,15 +1,11 @@
-import useSWR from 'swr';
-
 import Breakline from '@/common/components/elements/Breakline';
 import Image from '@/common/components/elements/Image';
 import MDXComponent from '@/common/components/elements/MDXComponent';
 import { BlogDetailProps } from '@/common/types/blog';
-import { fetcher } from '@/services/fetcher';
 
 import BlogHeader from './BlogHeader';
 
 const BlogDetail = ({
-  id,
   cover_image,
   title,
   body_markdown,
@@ -17,15 +13,8 @@ const BlogDetail = ({
   published_at,
   tags,
   reading_time_minutes,
-  blog_slug,
+  total_views_count,
 }: BlogDetailProps) => {
-  const { data: viewsData } = useSWR(
-    `/api/views?slug=${blog_slug}&id=${id}`,
-    fetcher
-  );
-
-  const viewsCount = viewsData?.views || 0;
-
   return (
     <>
       <BlogHeader
@@ -33,7 +22,7 @@ const BlogDetail = ({
         comments_count={comments_count}
         reading_time_minutes={reading_time_minutes}
         published_at={published_at}
-        page_views_count={viewsCount}
+        page_views_count={total_views_count}
       />
       <div className='space-y-6 leading-[1.8] dark:text-neutral-300 '>
         <Image
