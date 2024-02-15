@@ -18,7 +18,7 @@ const SocialMedia = ({ items }: SocialMediaProps) => {
         {items?.map((item: MenuItemProps, index: number) => (
           <Link
             key={index}
-            href={`https://api.maalik.dev/${item.title}`}
+            href={item.href || '#'}
             aria-label={item?.title}
             target='_blank'
             data-umami-event={item?.eventName}

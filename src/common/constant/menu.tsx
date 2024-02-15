@@ -1,10 +1,10 @@
 import {
   BsEnvelopeAtFill as EmailIcon,
   BsGithub as GithubIcon,
-  BsInstagram as InstagramIcon,
   BsLinkedin as LinkedinIcon,
   BsTwitter as TwitterIcon,
 } from 'react-icons/bs';
+import { FaGitlab } from 'react-icons/fa';
 import {
   FiBookOpen as LearnIcon,
   FiCoffee as ProjectIcon,
@@ -85,6 +85,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     eventName: 'Contact: Email',
     className: '!bg-green-600 border border dark:border-neutral-700',
     type: 'Link',
+    href: 'mailto:hello@maalik.dev',
   },
 
   {
@@ -95,6 +96,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     eventName: 'Social: Linkedin',
     className: '!bg-blue-500 border border dark:border-neutral-700',
     type: 'Link',
+    href: 'https://www.linkedin.com/in/malikbagwala/',
   },
   {
     title: 'Twitter',
@@ -104,24 +106,27 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     eventName: 'Social: Twitter',
     className: '!bg-sky-500 border border dark:border-neutral-700',
     type: 'Link',
+    href: 'https://twitter.com/malikbagwala',
   },
   {
-    title: 'Instagram',
-    icon: <InstagramIcon size={iconSize} />,
+    title: 'GitLab',
+    icon: <FaGitlab size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Instagram',
+    eventName: 'Social: GitLab',
     className: '!bg-orange-700 border border dark:border-neutral-700',
     type: 'Link',
+    href: 'https://gitlab.com/malikbagwala',
   },
   {
-    title: 'Github',
+    title: 'GitHub',
     icon: <GithubIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
     eventName: 'Social: Github',
     className: '!bg-black border border dark:border-neutral-700',
     type: 'Link',
+    href: 'https://github.com/malikbagwala',
   },
 ];
 
