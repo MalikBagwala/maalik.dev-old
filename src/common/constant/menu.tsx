@@ -2,6 +2,7 @@ import {
   BsEnvelopeAtFill as EmailIcon,
   BsGithub as GithubIcon,
   BsLinkedin as LinkedinIcon,
+  BsMedium as MediumIcon,
   BsTwitter as TwitterIcon,
 } from 'react-icons/bs';
 import { FaGitlab } from 'react-icons/fa';
@@ -107,6 +108,16 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     className: '!bg-sky-500 border border dark:border-neutral-700',
     type: 'Link',
     href: 'https://twitter.com/malikbagwala',
+  },
+  {
+    title: 'Medium',
+    icon: <MediumIcon size={iconSize} />,
+    isShow: true,
+    isExternal: true,
+    eventName: 'Social: Medium',
+    className: '!bg-sky-500 border border dark:border-neutral-700',
+    type: 'Link',
+    href: 'https://medium.com/@maalik',
   },
   {
     title: 'GitLab',
