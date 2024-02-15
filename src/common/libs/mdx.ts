@@ -30,7 +30,7 @@ const loadMdxFiles = (slug: string[]): MdxFileProps[] => {
     const mdxContent = mdxCompiler.processSync(content).toString();
 
     return {
-      slug: file.replace('.mdx', ''),
+      slug: file.replace(/^\d+_/, '').replace(/\.mdx$/, ''),
       frontMatter: data,
       content: mdxContent,
     };

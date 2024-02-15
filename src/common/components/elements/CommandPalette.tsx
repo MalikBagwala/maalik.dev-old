@@ -68,7 +68,7 @@ const CommandPalette = () => {
       title: 'SOCIALS',
       children: SOCIAL_MEDIA?.map((menu) => ({
         ...menu,
-        href: (menu.href || `https://api.maalik.dev/${menu.title}`) as string,
+        href: (menu.href || '#') as string,
         closeOnSelect: true,
       })),
     },
