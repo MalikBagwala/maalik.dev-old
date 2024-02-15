@@ -1,18 +1,24 @@
 import {
   SiAmazonaws,
   SiChakraui,
+  SiDigitalocean,
   SiDjango,
   SiGithub,
   SiGitlab,
   SiGo,
   SiGraphql,
+  SiHasura,
   SiHtml5,
   SiJavascript,
   SiKubernetes,
   SiNextdotjs,
+  SiPlausibleanalytics,
+  SiPostgresql,
   SiPython,
+  SiRabbitmq,
   SiRailway,
   SiReact,
+  SiServerfault,
   SiTailwindcss,
   SiTerraform,
   SiTypescript,
@@ -34,6 +40,20 @@ export const STACKS: stacksProps = {
   'Chakra UI': <SiChakraui size={iconSize} className='text-teal-400' />,
   Django: <SiDjango size={iconSize} className='text-green-500' />,
   Python: <SiPython size={iconSize} className='text-blue-500' />,
+  Postgres: (
+    <SiPostgresql
+      strokeWidth={0.7}
+      size={iconSize}
+      className='text-yellow-400'
+    />
+  ),
+  Hasura: <SiHasura size={iconSize} className='text-green-400' />,
+  Caddy: <SiServerfault size={iconSize} className='text-orange-400' />,
+  Plausible: (
+    <SiPlausibleanalytics size={iconSize} className='text-purple-400' />
+  ),
+  DigitalOcean: <SiDigitalocean size={iconSize} className='text-sky-500' />,
+  RabbitMQ: <SiRabbitmq size={iconSize} className='text-orange-600' />,
   GitLab: <SiGitlab size={iconSize} className='text-orange-400' />,
   AWS: <SiAmazonaws size={iconSize} className='text-amber-700' />,
   Terraform: <SiTerraform size={iconSize} className='text-purple-500' />,
