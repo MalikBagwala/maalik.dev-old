@@ -1,5 +1,16 @@
 export const CAREERS = [
   {
+    position: 'Full Stack Engineer',
+    company: 'Freelance',
+    location: 'Nashik (Remote)',
+    location_type: 'hybrid',
+    type: 'Fulltime',
+    start_date: '2024-06',
+    end_date: null,
+    industry: 'freelance',
+    link: 'https://www.linkedin.com/in/malikbagwala/',
+  },
+  {
     position: 'Chief Technology Officer (CTO)',
     company: 'Vesatogo Innovations',
     logo: '/images/careers/vesatogo.png',
@@ -7,7 +18,7 @@ export const CAREERS = [
     location_type: 'hybrid',
     type: 'Fulltime',
     start_date: '2023-08',
-    end_date: null,
+    end_date: '2024-06',
     industry: 'agritech',
     link: 'https://www.linkedin.com/company/vesatogo/',
   },
