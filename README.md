@@ -15,10 +15,6 @@ This website was built from scratch using Next.js and was first initialized in J
 
 On this website there are several features that will continue to be updated and added in the future.
 
-### 🎧 Spotify
-
-Displays song information being played on spotify in real time using the Spotify API and SWR.
-
 ### 🕗 Wakatime
 
 Data is retrieved using the Wakatime API and then displayed on the dashboard, built with Next.js API routes deployed as serverless functions.
@@ -59,10 +55,10 @@ If you are interested in running this project on your local machine, you can do 
 
 ### 2. Install dependencies
 
-It is encouraged to use **yarn** so the husky hooks can work properly.
+It is encouraged to use **bun** so the husky hooks can work properly.
 
 ```bash
-yarn install
+bun run install
 ```
 
 ### 3. Run the development server
@@ -70,7 +66,7 @@ yarn install
 You can start the server using this command:
 
 ```bash
-yarn dev
+bun run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.
