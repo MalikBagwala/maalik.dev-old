@@ -5,9 +5,8 @@ export default function Document() {
     <Html lang='en'>
       <Head>
         <script
-          async
           defer
-          src='https://analytics.umami.is/script.js'
+          src='https://cloud.umami.is/script.js'
           data-website-id='6ed8644f-03a1-4603-acec-e0f1be87df70'
         ></script>
         <link rel='apple-touch-icon' href='/favicon/apple-touch-icon.png' />
