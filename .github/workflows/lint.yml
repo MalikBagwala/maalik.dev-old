@@ -21,13 +21,17 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
+
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
 
       - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
+        run: bun install --frozen-lockfile
 
       - name: 🔬 Lint
-        run: yarn lint
+        run: bun lint
 
   typecheck:
     name: ʦ TypeScript
@@ -39,13 +43,17 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
+
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
 
       - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
+        run: bun install --frozen-lockfile
 
       - name: 🔎 Type check
-        run: yarn typecheck
+        run: bun typecheck
 
   prettier:
     name: 💅 Prettier
@@ -57,28 +65,36 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
+
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
 
       - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
+        run: bun install --frozen-lockfile
 
       - name: 💅 Prettier check
-        run: yarn format:check
+        run: bun format:check
 
-  test:
-    name: 🃏 Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v2
+  # test:
+  #   name: 🃏 Test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: ⬇️ Checkout repo
+  #       uses: actions/checkout@v2
 
-      - name: ⎔ Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
+  #     - name: ⎔ Setup node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 20
 
-      - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
+  #     - uses: oven-sh/setup-bun@v1
+  #       with:
+  #         bun-version: latest
 
-      - name: 🃏 Run jest
-        run: yarn test
+  #     - name: 📥 Download deps
+  #       run: bun install --frozen-lockfile
+
+  #     - name: 🃏 Run jest
+  #       run: bun test

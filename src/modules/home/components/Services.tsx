@@ -37,7 +37,7 @@ const Services = () => {
         </div>
         <p className='leading-[1.8] md:leading-loose text-neutral-800 dark:text-neutral-300 pl-2'>
           I&apos;m open for freelance projects, Feel free to get in touch and
-          let's have a discussion about how we can work together.
+          let&apos;s have a discussion about how we can work together.
         </p>
         <div className='flex gap-3'>
           {CONTACTS?.map((contact: ContactProps, index: number) => (

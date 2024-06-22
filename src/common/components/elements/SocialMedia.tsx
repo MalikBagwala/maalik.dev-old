@@ -12,7 +12,7 @@ const SocialMedia = ({ items }: SocialMediaProps) => {
   return (
     <div className='flex flex-col space-y-1'>
       <div className='text-sm ml-2 mt-1 mb-2 text-neutral-600 dark:text-neutral-500 font-sora'>
-        Let's Connect
+        Let&apos;s Connect
       </div>
       <div className='flex justify-between px-5 pt-2'>
         {items?.map((item: MenuItemProps, index: number) => (

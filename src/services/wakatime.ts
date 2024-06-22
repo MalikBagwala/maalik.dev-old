@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 
 const STATS_ENDPOINT = 'https://wakatime.com/api/v1/users/current/stats';
