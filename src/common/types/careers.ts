@@ -1,7 +1,7 @@
 export interface CareerProps {
   position: string;
   company: string;
-  logo: string | null;
+  logo?: string | null;
   location: string;
   location_type: string;
   type: string;
