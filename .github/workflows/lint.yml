@@ -77,24 +77,24 @@ jobs:
       - name: 💅 Prettier check
         run: bun format:check
 
-  # test:
-  #   name: 🃏 Test
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: ⬇️ Checkout repo
-  #       uses: actions/checkout@v2
+  test:
+    name: 🃏 Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v2
 
-  #     - name: ⎔ Setup node
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 20
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
-  #     - uses: oven-sh/setup-bun@v1
-  #       with:
-  #         bun-version: latest
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
 
-  #     - name: 📥 Download deps
-  #       run: bun install --frozen-lockfile
+      - name: 📥 Download deps
+        run: bun install --frozen-lockfile
 
-  #     - name: 🃏 Run jest
-  #       run: bun test
+      - name: 🃏 Run jest
+        run: bun test
