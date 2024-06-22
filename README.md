@@ -74,4 +74,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## License
 
-Licensed under the [GPL-3.0 license](https://github.com/MalikBagwala/maalik.dev/blob/master/LICENSE).
+Licensed under the [GPL-3.0 license](https://github.com/MalikBagwala/maalik.dev/blob/main/LICENSE).
