@@ -5,20 +5,18 @@ import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 import { useEffect } from 'react';
 
-import 'tailwindcss/tailwind.css';
-import 'aos/dist/aos.css';
 import '@/common/styles/globals.css';
+import 'aos/dist/aos.css';
+import 'tailwindcss/tailwind.css';
 
-import CommandPalette from '@/common/components/elements/CommandPalette';
 import Layout from '@/common/components/layouts';
-import { CommandPaletteProvider } from '@/common/context/CommandPaletteContext';
 import { firaCode, jakartaSans, soraSans } from '@/common/styles/fonts';
 
 import defaultSEOConfig from '../../next-seo.config';
 
 const ProgressBar = dynamic(
   () => import('src/common/components/elements/ProgressBar'),
-  { ssr: false }
+  { ssr: false },
 );
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -42,13 +40,10 @@ const App = ({ Component, pageProps }: AppProps) => {
       </style>
       <DefaultSeo {...defaultSEOConfig} />
       <ThemeProvider attribute='class' defaultTheme='dark'>
-        <CommandPaletteProvider>
-          <Layout>
-            <CommandPalette />
-            <ProgressBar />
-            <Component {...pageProps} />
-          </Layout>
-        </CommandPaletteProvider>
+        <Layout>
+          <ProgressBar />
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </>
   );
