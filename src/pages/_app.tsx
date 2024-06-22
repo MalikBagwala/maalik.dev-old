@@ -10,7 +10,6 @@ import 'aos/dist/aos.css';
 import 'tailwindcss/tailwind.css';
 
 import Layout from '@/common/components/layouts';
-import { firaCode, jakartaSans, soraSans } from '@/common/styles/fonts';
 
 import defaultSEOConfig from '../../next-seo.config';
 
@@ -29,15 +28,6 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
-      <style jsx global>
-        {`
-          html {
-            --jakartaSans-font: ${jakartaSans.style.fontFamily};
-            --soraSans-font: ${soraSans.style.fontFamily};
-            --firaCode-font: ${firaCode.style.fontFamily};
-          }
-        `}
-      </style>
       <DefaultSeo {...defaultSEOConfig} />
       <ThemeProvider attribute='class' defaultTheme='dark'>
         <Layout>
