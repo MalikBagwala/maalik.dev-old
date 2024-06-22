@@ -1,4 +1,5 @@
 import { Combobox, Dialog, Transition } from '@headlessui/react';
+import { useDebounce } from '@uidotdev/usehooks';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
@@ -9,7 +10,6 @@ import {
   BiSun as LightModeIcon,
 } from 'react-icons/bi';
 import { HiOutlineChat as AiIcon } from 'react-icons/hi';
-import { useDebounce } from 'usehooks-ts';
 
 import {
   EXTERNAL_LINKS,

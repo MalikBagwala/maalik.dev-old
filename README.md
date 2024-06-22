@@ -15,16 +15,6 @@ This website was built from scratch using Next.js and was first initialized in J
 
 On this website there are several features that will continue to be updated and added in the future.
 
-### 🤖 ChatGPT AI
-
-You can access this feature by opening the command palette [cmd+k], then typing whatever you want to search/ask for.
-
-Note:
-
-If you're using Chat Completions engine model of ChatGPT, please concern about this:
-
-Due this site is using free cloud hosting services (Vercel) with certain limitations (Serverless Function Execution Timeout), sometimes an error will occur if the response from the open AI API is too long, but you can change it in the vercel.json file to upgrade memory and maxDuration to be bigger according to the capabilities of your vercel plan.
-
 ### 🎧 Spotify
 
 Displays song information being played on spotify in real time using the Spotify API and SWR.
@@ -32,12 +22,6 @@ Displays song information being played on spotify in real time using the Spotify
 ### 🕗 Wakatime
 
 Data is retrieved using the Wakatime API and then displayed on the dashboard, built with Next.js API routes deployed as serverless functions.
-
-### 📝 Blogs
-
-The CMS Blog on this website utilizes the API from the dev.to platform. The displayed articles are one-to-one with the articles published on my dev.to blog and are updated in real-time.
-
-The data fetching technique used to retrieve articles from dev.to involves using Client-Side Rendering (CSR) for the blog list and Server-Side Rendering (SSR) for the blog details.
 
 ### 🗳 Projects
 

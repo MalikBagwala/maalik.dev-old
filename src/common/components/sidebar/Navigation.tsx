@@ -1,6 +1,6 @@
+import { useWindowSize } from '@uidotdev/usehooks';
 import { useContext } from 'react';
 import { BiCommand as CommandIcon } from 'react-icons/bi';
-import { useWindowSize } from 'usehooks-ts';
 
 import { MENU_ITEMS, SOCIAL_MEDIA } from '@/common/constant/menu';
 import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
@@ -13,7 +13,7 @@ import SocialMedia from '../elements/SocialMedia';
 const Navigation = () => {
   const { setIsOpen } = useContext(CommandPaletteContext);
   const { width } = useWindowSize();
-  const isMobile = width < 480;
+  const isMobile = width && width < 480;
 
   const filterdMenu = MENU_ITEMS?.filter((item) => item?.isShow);
   const filteredSocialMedia = SOCIAL_MEDIA?.filter((item) => item?.isShow);

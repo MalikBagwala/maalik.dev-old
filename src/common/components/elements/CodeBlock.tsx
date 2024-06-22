@@ -12,7 +12,7 @@ import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javasc
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
 import { a11yDark as themeColor } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import { useCopyToClipboard } from 'usehooks-ts';
+import { useCopyToClipboard } from '@uidotdev/usehooks';
 
 const languages = {
   javascript: 'javascript',
