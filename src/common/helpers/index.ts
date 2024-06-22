@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 
 export const formatDate = (
   date: string | null | undefined,
-  type = 'MMMM DD, YYYY'
+  type = 'MMMM DD, YYYY',
 ) => {
   if (!date) return 'NA';
   return dayjs(date).format(type);
@@ -10,7 +10,7 @@ export const formatDate = (
 
 export const durationBetweenDates = (
   startDate: string | null,
-  endDate: string | null
+  endDate: string | null,
 ) => {
   if (!startDate || !endDate) return 'N/A';
   const durationInMonths = dayjs(endDate).diff(dayjs(startDate), 'months');

@@ -11,7 +11,7 @@ const Loading = ({ isFullScreen = false, text }: LoadingProps) => {
     <div
       className={clsx(
         'flex flex-col space-y-5 items-center justify-center p-40',
-        isFullScreen && 'h-screen'
+        isFullScreen && 'h-screen',
       )}
     >
       <HashLoader color='#36d7b7' />

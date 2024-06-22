@@ -18,7 +18,7 @@ const Dashboard = () => {
               type={account?.type}
               endpoint={account?.endpoint}
             />
-          )
+          ),
         )}
       </div>
     </>

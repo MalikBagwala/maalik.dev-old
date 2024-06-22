@@ -7,7 +7,7 @@ import ProjectCard from './ProjectCard';
 
 const Projects = ({ projects }: ProjectsProps) => {
   const fiteredProjects = projects.filter(
-    (project) => project.frontMatter.isShow
+    (project) => project.frontMatter.isShow,
   );
   if (fiteredProjects.length === 0) {
     return <EmptyState message='No Data' />;
