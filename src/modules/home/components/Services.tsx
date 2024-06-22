@@ -33,7 +33,7 @@ const Services = () => {
       <div className='p-8 bg-neutral-100 dark:bg-neutral-800 border dark:border-none rounded-xl space-y-4'>
         <div className='flex gap-2 items-center'>
           <RocketIcon size={24} />
-          <h3 className='text-xl font-medium'>Lets work together!</h3>
+          <h1 className='text-xl font-medium'>Lets work together!</h1>
         </div>
         <p className='leading-[1.8] md:leading-loose text-neutral-800 dark:text-neutral-300 pl-2'>
           I&apos;m open for freelance projects, Feel free to get in touch and
