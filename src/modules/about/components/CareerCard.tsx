@@ -51,7 +51,7 @@ const CareerCard = ({
               ~{' '}
               {durationBetweenDates(
                 start_date,
-                end_date ?? dayjs().toISOString()
+                end_date ?? dayjs().toISOString(),
               )}
             </span>
           </div>

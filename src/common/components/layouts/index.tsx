@@ -22,7 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
       <div
         className={clsx(
           'max-w-6xl mx-auto lg:px-8 lg:py-4 xl:py-8',
-          isDarkTheme ? 'dark:text-darkText' : ''
+          isDarkTheme ? 'dark:text-darkText' : '',
         )}
       >
         <div className='flex flex-col lg:flex-row lg:gap-5'>

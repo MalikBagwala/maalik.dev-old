@@ -19,7 +19,7 @@ interface CodingActiveProps {
 const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
   const { data } = useSWR('/api/read-stats', fetcher);
   const [formattedLastUpdate, setFormattedLastUpdate] = useState<string | null>(
-    null
+    null,
   );
 
   useEffect(() => {
