@@ -9,7 +9,7 @@ interface MarkdownRendererProps {
 }
 
 interface TableProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const Table = ({ children }: TableProps) => (
