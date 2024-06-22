@@ -43,7 +43,7 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
           />
         ),
         ul: (props) => (
-          <ol className='pl-10 space-y-3 list-disc pb-2' {...props} />
+          <ul className='pl-10 space-y-3 list-disc pb-2' {...props} />
         ),
         ol: (props) => (
           <ol className='pl-10 space-y-3 list-decimal pb-2' {...props} />
