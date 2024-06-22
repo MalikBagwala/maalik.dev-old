@@ -39,7 +39,7 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({
               url: frontMatter?.image,
             },
           ],
-          siteName: 'Blog Malik Bagwala',
+          siteName: 'Malik Bagwala | Projects',
         }}
       />
       <Container data-aos='fade-up'>
