@@ -27,11 +27,9 @@ SyntaxHighlighter.registerLanguage(languages.diff, diff);
 SyntaxHighlighter.registerLanguage(languages.tsx, tsx);
 SyntaxHighlighter.registerLanguage(languages.css, css);
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CodeBlock = ({ className = '', children, inline, ...props }: any) => {
   const [isCopied, setIsCopied] = useState<boolean>(false);
-  // eslint-disable-next-line unused-imports/no-unused-vars
-  const [value, copy] = useCopyToClipboard();
+  const [_, copy] = useCopyToClipboard();
   const match = /language-(\w+)/.exec(className || '');
 
   const handleCopy = (code: string) => {
