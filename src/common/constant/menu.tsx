@@ -120,15 +120,3 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     href: 'https://github.com/malikbagwala',
   },
 ];
-
-export const EXTERNAL_LINKS: MenuItemProps[] = [
-  {
-    title: 'Analytics',
-    href: 'https://analytics.eu.umami.is/share/qApLA9YdTiAOHGhx/maalik.dev',
-    icon: <AnalyticsIcon size={iconSize} />,
-    isShow: true,
-    isExternal: true,
-    eventName: 'External Link: Analytics',
-    type: 'Link',
-  },
-];
