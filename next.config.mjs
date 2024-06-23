@@ -18,6 +18,9 @@ const nextConfig = {
       {
         hostname: 'maalik.dev',
       },
+      {
+        hostname: 'images.ctfassets.net',
+      },
     ],
   },
 };

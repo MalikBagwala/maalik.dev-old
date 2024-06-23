@@ -6,16 +6,13 @@ import { ProjectsProps } from '@/common/types/projects';
 import ProjectCard from './ProjectCard';
 
 const Projects = ({ projects }: ProjectsProps) => {
-  const fiteredProjects = projects.filter(
-    (project) => project.frontMatter.isShow,
-  );
-  if (fiteredProjects.length === 0) {
+  if (projects.length === 0) {
     return <EmptyState message='No Data' />;
   }
 
   return (
     <div className='grid sm:grid-cols-2 gap-5 pt-2'>
-      {fiteredProjects.map((project, index) => (
+      {projects.map((project, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, scale: 0.8 }}

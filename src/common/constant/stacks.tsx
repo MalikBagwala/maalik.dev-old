@@ -1,6 +1,7 @@
 import {
   SiAmazonaws,
   SiChakraui,
+  SiCss3,
   SiDigitalocean,
   SiDjango,
   SiGithub,
@@ -24,46 +25,47 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 
-type stacksProps = {
+type StacksProps = {
   [key: string]: JSX.Element;
 };
 
 const iconSize = 24;
 
-export const STACKS: stacksProps = {
-  JavaScript: <SiJavascript size={iconSize} className='text-yellow-500' />,
-  TypeScript: <SiTypescript size={iconSize} className='text-blue-400' />,
-  'Next.js': <SiNextdotjs size={iconSize} />,
-  'React.js': <SiReact size={iconSize} className='text-sky-500' />,
-  TailwindCSS: <SiTailwindcss size={iconSize} className='text-cyan-300' />,
-  GraphQL: <SiGraphql size={iconSize} className='text-pink-600' />,
-  'Chakra UI': <SiChakraui size={iconSize} className='text-teal-400' />,
-  Django: <SiDjango size={iconSize} className='text-green-500' />,
-  Python: <SiPython size={iconSize} className='text-blue-500' />,
-  Postgres: (
+export const STACKS: StacksProps = {
+  javascript: <SiJavascript size={iconSize} className='text-yellow-500' />,
+  typescript: <SiTypescript size={iconSize} className='text-blue-400' />,
+  next: <SiNextdotjs size={iconSize} />,
+  react: <SiReact size={iconSize} className='text-sky-500' />,
+  tailwindcss: <SiTailwindcss size={iconSize} className='text-cyan-300' />,
+  graphql: <SiGraphql size={iconSize} className='text-pink-600' />,
+  chakra: <SiChakraui size={iconSize} className='text-teal-400' />,
+  django: <SiDjango size={iconSize} className='text-green-500' />,
+  python: <SiPython size={iconSize} className='text-blue-500' />,
+  postgres: (
     <SiPostgresql
       strokeWidth={0.7}
       size={iconSize}
       className='text-yellow-400'
     />
   ),
-  Hasura: <SiHasura size={iconSize} className='text-green-400' />,
-  Caddy: <SiServerfault size={iconSize} className='text-orange-400' />,
-  Plausible: (
+  hasura: <SiHasura size={iconSize} className='text-green-400' />,
+  caddy: <SiServerfault size={iconSize} className='text-orange-400' />,
+  plausible: (
     <SiPlausibleanalytics size={iconSize} className='text-purple-400' />
   ),
-  DigitalOcean: <SiDigitalocean size={iconSize} className='text-sky-500' />,
-  RabbitMQ: <SiRabbitmq size={iconSize} className='text-orange-600' />,
-  GitLab: <SiGitlab size={iconSize} className='text-orange-400' />,
-  AWS: <SiAmazonaws size={iconSize} className='text-amber-700' />,
-  Terraform: <SiTerraform size={iconSize} className='text-purple-500' />,
-  Kubernetes: <SiKubernetes size={iconSize} className='text-blue-700' />,
-  Go: <SiGo size={iconSize} className='text-blue-500' />,
-  Railway: (
+  digitalocean: <SiDigitalocean size={iconSize} className='text-sky-500' />,
+  rabbitmq: <SiRabbitmq size={iconSize} className='text-orange-600' />,
+  gitlab: <SiGitlab size={iconSize} className='text-orange-400' />,
+  aws: <SiAmazonaws size={iconSize} className='text-amber-700' />,
+  terraform: <SiTerraform size={iconSize} className='text-purple-500' />,
+  kubernetes: <SiKubernetes size={iconSize} className='text-blue-700' />,
+  go: <SiGo size={iconSize} className='text-blue-500' />,
+  railway: (
     <SiRailway size={iconSize} className='text-gray-600 dark:text-white' />
   ),
-  HTML5: <SiHtml5 size={iconSize} className='text-orange-700' />,
-  GitHub: (
+  html5: <SiHtml5 size={iconSize} className='text-orange-700' />,
+  github: (
     <SiGithub size={iconSize} className='text-gray-700 dark:text-white' />
   ),
+  css3: <SiCss3 size={iconSize} className='text-blue-300' />,
 };

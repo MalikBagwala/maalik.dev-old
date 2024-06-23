@@ -16,6 +16,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^16.5.2",
     "@headlessui/react": "^2.1.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
@@ -23,6 +24,7 @@
     "aos": "^2.3.4",
     "axios": "^1.7.2",
     "clsx": "^2.1.1",
+    "contentful": "^10.12.2",
     "dayjs": "^1.11.11",
     "framer-motion": "^11.2.11",
     "gray-matter": "^4.0.3",

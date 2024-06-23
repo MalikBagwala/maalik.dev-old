@@ -6,12 +6,13 @@ import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
-import { ProjectItemProps } from '@/common/types/projects';
 
-const ProjectCard = ({
-  frontMatter: { title, description, image, thumbnail, stacks, isFeatured },
-  slug,
-}: ProjectItemProps) => {
+const ProjectCard = ({ fields }: any) => {
+  const stacks: any[] = [];
+  const isFeatured = false;
+  const { slug, title, description, thumbnail, stack } = fields;
+  const thumbSrc = thumbnail?.fields?.file?.url;
+  console.log(fields);
   return (
     <Link href={`/projects/${slug}`}>
       <Card className='group relative border border-neutral-200 dark:border-neutral-900 lg:hover:scale-[102%] cursor-pointer'>
@@ -22,13 +23,15 @@ const ProjectCard = ({
           </div>
         )}
         <div className='relative'>
-          <Image
-            src={thumbnail || image}
-            width={400}
-            height={200}
-            alt={title}
-            className='rounded-t-xl h-48 object-cover object-left'
-          />
+          {thumbSrc && (
+            <Image
+              src={`https:${thumbSrc}`}
+              width={400}
+              height={200}
+              alt={title}
+              className='rounded-t-xl h-48 object-cover object-left'
+            />
+          )}
           <div className='flex gap-1 absolute top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity duration-300 justify-center items-center text-white group-hover:opacity-80 rounded-t-xl text-sm font-medium'>
             <span>View Project</span>
             <ViewIcon size={20} />
@@ -44,11 +47,17 @@ const ProjectCard = ({
             {description}
           </p>
           <div className='flex flex-wrap items-center gap-3 pt-2'>
-            {stacks?.map((stack: string, index: number) => (
-              <div key={index}>
-                <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
-              </div>
-            ))}
+            {stack?.map((stack: any) => {
+              const stackName = stack.fields?.name?.toLowerCase();
+              console.log(stackName);
+              return (
+                <div key={stackName}>
+                  <Tooltip title={stack}>
+                    {STACKS[stackName.toLowerCase()]}
+                  </Tooltip>
+                </div>
+              );
+            })}
           </div>
         </div>
       </Card>
