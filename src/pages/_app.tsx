@@ -14,7 +14,7 @@ import Layout from '@/common/components/layouts';
 import defaultSEOConfig from '../../next-seo.config';
 
 const ProgressBar = dynamic(
-  () => import('src/common/components/elements/ProgressBar'),
+  () => import('../common/components/elements/ProgressBar'),
   { ssr: false },
 );
 
