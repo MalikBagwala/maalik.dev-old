@@ -1,15 +1,15 @@
 const canonicalUrl = 'https://maalik.dev';
 const metaImage = 'https://maalik.dev/og.jpg';
 const metaDescription =
-  'Seasoned Software Engineer especially in Frontend side, with a passion for creating pixel-perfect web experiences';
+  'Seasoned software engineer with 5+ years of experience building enterprise applications across the stack, from scratch. React | Django | PostgreSQL | Kuberntes | TypeScript';
 
 const defaultSEOConfig = {
-  defaultTitle: 'Malik Bagwala - UI Engineer',
+  defaultTitle: 'Malik Bagwala - Full-Stack Engineer',
   description: metaDescription,
   canonical: canonicalUrl,
   openGraph: {
     canonical: canonicalUrl,
-    title: 'Malik Bagwala - UI Engineer',
+    title: 'Malik Bagwala - Full-Stack Engineer',
     description: metaDescription,
     type: 'website',
     images: [
