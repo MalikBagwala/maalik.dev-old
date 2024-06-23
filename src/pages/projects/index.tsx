@@ -5,13 +5,13 @@ import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import Projects from '@/modules/projects';
 import contentfulClient from '@/services/contentful';
-import { ContentType, ContentTypeFieldType, EntryFieldTypes } from 'contentful';
+import { EntryFieldTypes } from 'contentful';
 
 export type ProjectSkeleton = {
   contentTypeId: 'projects';
   fields: {
     slug: EntryFieldTypes.Text;
-    body: any;
+    body: EntryFieldTypes.RichText;
   };
 };
 type ProjectsPageProps = {

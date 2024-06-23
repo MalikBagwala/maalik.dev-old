@@ -6,7 +6,6 @@ import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import ProjectDetail from '@/modules/projects/components/ProjectDetail';
 import contentfulClient from '@/services/contentful';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { ProjectSkeleton } from '.';
 
 type ProjectsDetailPageProps = any;
@@ -90,13 +89,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      project: {
-        ...project,
-        fields: {
-          ...project.fields,
-          body: documentToHtmlString(project.fields.body as any),
-        },
-      },
+      project,
     },
   };
 };

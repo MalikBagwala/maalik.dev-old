@@ -5,10 +5,22 @@ import { ProjectItemProps } from '@/common/types/projects';
 
 import getAssetUrl from '@/utils/getAssetUrl';
 import ProjectLink from './ProjectLink';
+import {
+  documentToReactComponents,
+  Options,
+} from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 
+const options: Options = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET](node) {
+      return null;
+    },
+  },
+};
 const ProjectDetail = ({ project }: ProjectItemProps) => {
   const { title, source, live, thumbnail, stack, body } = project.fields;
-  console.log(body);
+  console.log();
   return (
     <div className='space-y-8'>
       <div className='flex flex-col lg:flex-row items-start lg:items-center sm:flex-row gap-5 justify-between'>
@@ -35,14 +47,7 @@ const ProjectDetail = ({ project }: ProjectItemProps) => {
           className='hover:scale-105'
         />
       )}
-      {body && (
-        <div
-          className='space-y-6 leading-[1.8] dark:text-neutral-300 mt-5'
-          dangerouslySetInnerHTML={{
-            __html: body,
-          }}
-        ></div>
-      )}
+      {documentToReactComponents(body, options)}
     </div>
   );
 };
