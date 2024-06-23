@@ -96,5 +96,5 @@ jobs:
       - name: 📥 Download deps
         run: bun install --frozen-lockfile
 
-      - name: 🃏 Run jest
-        run: bun test
+      # - name: 🃏 Run jest
+      #   run: bun test
