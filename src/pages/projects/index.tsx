@@ -3,26 +3,33 @@ import { NextSeo } from 'next-seo';
 
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
-import loadMdxFiles from '@/common/libs/mdx';
-import { ProjectItemProps } from '@/common/types/projects';
 import Projects from '@/modules/projects';
+import contentfulClient from '@/services/contentful';
+import { ContentType, ContentTypeFieldType, EntryFieldTypes } from 'contentful';
 
-interface ProjectsPageProps {
-  projects: ProjectItemProps[];
-  data: ProjectItemProps[];
-}
-
-const PAGE_TITLE = 'Projects';
-const PAGE_DESCRIPTION =
-  'Showcasing my passion for technology, design, and problem-solving through code.';
-
-const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects }) => {
+export type ProjectSkeleton = {
+  contentTypeId: 'projects';
+  fields: {
+    slug: EntryFieldTypes.Text;
+    body: any;
+  };
+};
+type ProjectsPageProps = {
+  title: string;
+  subtitle: string;
+  response: any;
+};
+const ProjectsPage: NextPage<ProjectsPageProps> = ({
+  title,
+  subtitle,
+  response,
+}) => {
   return (
     <>
-      <NextSeo title={`${PAGE_TITLE} - Malik Bagwala`} />
+      <NextSeo title={`${title} - Malik Bagwala`} />
       <Container data-aos='fade-up'>
-        <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-        <Projects projects={projects} />
+        <PageHeading title={title} description={subtitle} />
+        <Projects projects={response.items} />
       </Container>
     </>
   );
@@ -30,12 +37,17 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects }) => {
 
 export default ProjectsPage;
 
-export const getStaticProps: GetStaticProps = async () => {
-  const projectList = loadMdxFiles(['projects']);
-
+export const getStaticProps: GetStaticProps<ProjectsPageProps> = async () => {
+  const CONTENT_TYPE_ID = 'projects';
+  const contentType = await contentfulClient.getContentType(CONTENT_TYPE_ID);
+  const projects = await contentfulClient.getEntries<ProjectSkeleton>({
+    content_type: CONTENT_TYPE_ID,
+  });
   return {
     props: {
-      projects: projectList,
+      title: contentType.name,
+      subtitle: contentType.description,
+      response: projects,
     },
   };
 };

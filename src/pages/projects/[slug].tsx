@@ -4,19 +4,19 @@ import { NextSeo } from 'next-seo';
 import BackButton from '@/common/components/elements/BackButton';
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
-import loadMdxFiles from '@/common/libs/mdx';
-import { ProjectItemProps } from '@/common/types/projects';
 import ProjectDetail from '@/modules/projects/components/ProjectDetail';
+import contentfulClient from '@/services/contentful';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { ProjectSkeleton } from '.';
 
-interface ProjectsDetailPageProps {
-  project: ProjectItemProps;
-}
+type ProjectsDetailPageProps = any;
 
-const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({
-  project: { slug, frontMatter, content },
-}) => {
-  const PAGE_TITLE = frontMatter.title;
-  const PAGE_DESCRIPTION = frontMatter?.description;
+const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
+  const { title, description, slug, thumbnail, body } = project.fields;
+  const { createdAt, updatedAt } = project.sys;
+  console.log(project);
+  const PAGE_TITLE = title;
+  const PAGE_DESCRIPTION = description;
 
   const canonicalUrl = `https://maalik.dev/project/${slug}`;
 
@@ -29,14 +29,14 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({
         openGraph={{
           type: 'article',
           article: {
-            // publishedTime: project?.updated_at.toString(),
-            // modifiedTime: project?.updated_at.toString(),
+            publishedTime: createdAt,
+            modifiedTime: updatedAt,
             authors: ['Malik Bagwala'],
           },
           url: canonicalUrl,
           images: [
             {
-              url: frontMatter?.image,
+              url: `https://${thumbnail?.fields?.file?.url}`,
             },
           ],
           siteName: 'Malik Bagwala | Projects',
@@ -45,11 +45,7 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({
       <Container data-aos='fade-up'>
         <BackButton url='/projects' />
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-        <ProjectDetail
-          slug={slug}
-          content={content}
-          frontMatter={frontMatter}
-        />
+        <ProjectDetail project={project} />
       </Container>
     </>
   );
@@ -58,10 +54,13 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({
 export default ProjectsDetailPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const projects = loadMdxFiles(['projects']);
+  const CONTENT_TYPE_ID = 'projects';
+  const projects = await contentfulClient.getEntries<ProjectSkeleton>({
+    content_type: CONTENT_TYPE_ID,
+  });
 
-  const paths = projects.map((project) => ({
-    params: { slug: project.slug },
+  const paths = projects.items.map((project) => ({
+    params: { slug: project.fields.slug },
   }));
   return {
     paths,
@@ -72,8 +71,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug as string;
 
-  const projects = loadMdxFiles(['projects']);
-  const project = projects.find((project) => project.slug === slug);
+  const CONTENT_TYPE_ID = 'projects';
+  const projects = await contentfulClient.getEntries<ProjectSkeleton>({
+    content_type: CONTENT_TYPE_ID,
+    'fields.slug[match]': slug,
+  });
+
+  const project = projects?.items?.[0];
 
   if (!project) {
     return {
@@ -86,7 +90,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      project,
+      project: {
+        ...project,
+        fields: {
+          ...project.fields,
+          body: documentToHtmlString(project.fields.body as any),
+        },
+      },
     },
   };
 };
