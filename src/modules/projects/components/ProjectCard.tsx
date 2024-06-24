@@ -46,7 +46,6 @@ const ProjectCard = ({ fields }: any) => {
           <div className='flex flex-wrap items-center gap-3 pt-2'>
             {stack?.map((stack: any) => {
               const stackName = stack.fields?.name?.toLowerCase();
-              console.log(stackName);
               return (
                 <div key={stackName}>
                   <Tooltip title={stack}>
