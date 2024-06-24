@@ -2,8 +2,10 @@ import {
   SiAmazonaws,
   SiChakraui,
   SiCss3,
+  SiDart,
   SiDigitalocean,
   SiDjango,
+  SiFlutter,
   SiGithub,
   SiGitlab,
   SiGo,
@@ -32,6 +34,8 @@ type StacksProps = {
 const iconSize = 24;
 
 export const STACKS: StacksProps = {
+  flutter: <SiFlutter size={iconSize} className='text-blue-300' />,
+  dart: <SiDart size={iconSize} className='text-teal-300' />,
   javascript: <SiJavascript size={iconSize} className='text-yellow-500' />,
   typescript: <SiTypescript size={iconSize} className='text-blue-400' />,
   next: <SiNextdotjs size={iconSize} />,
@@ -41,7 +45,7 @@ export const STACKS: StacksProps = {
   chakra: <SiChakraui size={iconSize} className='text-teal-400' />,
   django: <SiDjango size={iconSize} className='text-green-500' />,
   python: <SiPython size={iconSize} className='text-blue-500' />,
-  postgres: (
+  postgresql: (
     <SiPostgresql
       strokeWidth={0.7}
       size={iconSize}

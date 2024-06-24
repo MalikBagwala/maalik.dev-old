@@ -14,39 +14,48 @@ import { BLOCKS } from '@contentful/rich-text-types';
 const options: Options = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET](node) {
-      return null;
+      return (
+        <Image
+          height={400}
+          width={800}
+          alt={node?.data?.target?.fields?.title}
+          src={getAssetUrl(node?.data.target)}
+        />
+      );
     },
   },
 };
 const ProjectDetail = ({ project }: ProjectItemProps) => {
-  const { title, source, live, thumbnail, stack, body } = project.fields;
-  console.log();
+  const { title, source, live, stack, body, cover } = project.fields;
   return (
     <div className='space-y-8'>
-      <div className='flex flex-col lg:flex-row items-start lg:items-center sm:flex-row gap-5 justify-between'>
-        <div className='flex items-center flex-wrap gap-2'>
+      <div className='flex flex-col lg:flex-row items-baseline lg:items-center sm:flex-row gap-6 justify-between'>
+        <div className='flex items-center flex-wrap gap-2 w-[150%]'>
           <span className='text-[15px] mb-1 text-neutral-700 dark:text-neutral-300'>
             Tech Stack :
           </span>
-          <div className='flex flex-wrap items-center gap-3'>
-            {stack?.map((stack: string, index: number) => (
-              <div key={index}>
-                <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
-              </div>
-            ))}
+          <div className='flex flex-wrap items-center gap-3 w-full'>
+            {stack?.map((stack: any, index: number) => {
+              const stackName = stack.fields?.name?.toLowerCase();
+              return (
+                <div key={index}>
+                  <Tooltip title={stackName}>{STACKS[stackName]}</Tooltip>
+                </div>
+              );
+            })}
           </div>
         </div>
         <ProjectLink title={title} linkDemo={live} linkSourceCode={source} />
       </div>
-      {thumbnail && (
+      {cover ? (
         <Image
-          src={getAssetUrl(thumbnail)}
+          src={getAssetUrl(cover)}
           width={800}
           height={400}
           alt={title}
           className='hover:scale-105'
         />
-      )}
+      ) : null}
       {documentToReactComponents(body, options)}
     </div>
   );
