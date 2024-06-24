@@ -8,11 +8,8 @@ import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
 
 const ProjectCard = ({ fields }: any) => {
-  const stacks: any[] = [];
-  const isFeatured = false;
-  const { slug, title, description, thumbnail, stack } = fields;
+  const { slug, title, description, thumbnail, stack, isFeatured } = fields;
   const thumbSrc = thumbnail?.fields?.file?.url;
-  console.log(fields);
   return (
     <Link href={`/projects/${slug}`}>
       <Card className='group relative border border-neutral-200 dark:border-neutral-900 lg:hover:scale-[102%] cursor-pointer'>

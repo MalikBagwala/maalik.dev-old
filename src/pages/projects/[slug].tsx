@@ -11,9 +11,8 @@ import { ProjectSkeleton } from '.';
 type ProjectsDetailPageProps = any;
 
 const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
-  const { title, description, slug, thumbnail, body } = project.fields;
+  const { title, description, slug, thumbnail } = project.fields;
   const { createdAt, updatedAt } = project.sys;
-  console.log(project);
   const PAGE_TITLE = title;
   const PAGE_DESCRIPTION = description;
 

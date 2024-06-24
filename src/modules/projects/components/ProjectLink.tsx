@@ -20,7 +20,7 @@ const ProjectLink = ({ title, linkSourceCode, linkDemo }: ProjectLinkProps) => {
 
     return (
       <Link href={url} target='_blank' passHref data-umami-event={eventName}>
-        <div className='flex gap-2 items-center font-medium text-neutral-700 dark:text-neutral-300 '>
+        <div className='flex gap-2 items-center font-medium text-neutral-700 dark:text-neutral-300 w-full'>
           {icon}
           <span className='text-[15px] dark:text-teal-500 hover:dark:text-teal-400 transition-all duration-300'>
             {text}
@@ -31,7 +31,7 @@ const ProjectLink = ({ title, linkSourceCode, linkDemo }: ProjectLinkProps) => {
   };
 
   return (
-    <div className='flex gap-4'>
+    <div className='flex gap-4 w-full'>
       {linkSourceCode && (
         <LinkComponent
           url={linkSourceCode}
