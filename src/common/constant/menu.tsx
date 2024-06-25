@@ -88,7 +88,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     eventName: 'Social: Twitter',
     className: '!bg-sky-500 border border dark:border-neutral-700',
     type: 'Link',
-    href: 'https:// twitter.com/malikbagwala',
+    href: 'https://twitter.com/malikbagwala',
   },
   {
     title: 'Medium',
