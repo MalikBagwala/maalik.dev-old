@@ -23,6 +23,18 @@ const options: Options = {
         />
       );
     },
+    [BLOCKS.HEADING_1](_, children) {
+      return <h1>{children}</h1>;
+    },
+    [BLOCKS.HEADING_2](_, children) {
+      return <h2 className='text-2xl'>{children}</h2>;
+    },
+    [BLOCKS.HEADING_3](_, children) {
+      return <h3 className='text-xl font-medium'>{children}</h3>;
+    },
+    [BLOCKS.PARAGRAPH](_, children) {
+      return <p className='text-gray-700 dark:text-gray-300'>{children}</p>;
+    },
   },
 };
 const ProjectDetail = ({ project }: ProjectItemProps) => {

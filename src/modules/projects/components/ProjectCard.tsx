@@ -48,7 +48,7 @@ const ProjectCard = ({ fields }: any) => {
               const stackName = stack.fields?.name?.toLowerCase();
               return (
                 <div key={stackName}>
-                  <Tooltip title={stack}>
+                  <Tooltip title={stack.toString()}>
                     {STACKS[stackName.toLowerCase()]}
                   </Tooltip>
                 </div>
