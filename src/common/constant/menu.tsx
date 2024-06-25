@@ -14,6 +14,7 @@ import {
   FiUser as ProfileIcon,
 } from 'react-icons/fi';
 
+import { SiUpwork } from 'react-icons/si';
 import { MenuItemProps } from '../types/menu';
 
 const iconSize = 20;
@@ -82,12 +83,12 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   {
     title: 'Twitter',
     icon: <TwitterIcon size={iconSize} />,
-    isShow: true,
+    isShow: false,
     isExternal: true,
     eventName: 'Social: Twitter',
     className: '!bg-sky-500 border border dark:border-neutral-700',
     type: 'Link',
-    href: 'https://twitter.com/malikbagwala',
+    href: 'https:// twitter.com/malikbagwala',
   },
   {
     title: 'Medium',
@@ -118,5 +119,15 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     className: '!bg-black border border dark:border-neutral-700',
     type: 'Link',
     href: 'https://github.com/malikbagwala',
+  },
+  {
+    title: 'Upwork',
+    icon: <SiUpwork size={iconSize} />,
+    isShow: true,
+    isExternal: true,
+    eventName: 'Social: Upwork',
+    className: '!bg-black border border dark:border-neutral-700',
+    type: 'Link',
+    href: 'https://www.upwork.com/freelancers/maalik',
   },
 ];
