@@ -31,7 +31,7 @@ const ProjectLink = ({ title, linkSourceCode, linkDemo }: ProjectLinkProps) => {
   };
 
   return (
-    <div className='flex gap-4 w-full'>
+    <div className='flex gap-4'>
       {linkSourceCode && (
         <LinkComponent
           url={linkSourceCode}

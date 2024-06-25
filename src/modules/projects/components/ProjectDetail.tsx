@@ -42,7 +42,7 @@ const ProjectDetail = ({ project }: ProjectItemProps) => {
   return (
     <div className='space-y-8'>
       <div className='flex flex-col lg:flex-row items-baseline lg:items-center sm:flex-row gap-6 justify-between'>
-        <div className='flex items-center gap-2 w-full'>
+        <div className='flex items-center gap-2'>
           <span className='text-[15px] text-neutral-700 dark:text-neutral-300'>
             Tech Stack :
           </span>
