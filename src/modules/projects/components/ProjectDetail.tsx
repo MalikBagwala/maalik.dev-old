@@ -42,17 +42,17 @@ const ProjectDetail = ({ project }: ProjectItemProps) => {
   return (
     <div className='space-y-8'>
       <div className='flex flex-col lg:flex-row items-baseline lg:items-center sm:flex-row gap-6 justify-between'>
-        <div className='flex items-center flex-wrap gap-2 w-[150%]'>
-          <span className='text-[15px] mb-1 text-neutral-700 dark:text-neutral-300'>
+        <div className='flex items-center gap-2 w-full'>
+          <span className='text-[15px] text-neutral-700 dark:text-neutral-300'>
             Tech Stack :
           </span>
-          <div className='flex flex-wrap items-center gap-3 w-full'>
+          <div className='flex flex-wrap items-baseline gap-3'>
             {stack?.map((stack: any, index: number) => {
               const stackName = stack.fields?.name?.toLowerCase();
               return (
-                <div key={index}>
-                  <Tooltip title={stackName}>{STACKS[stackName]}</Tooltip>
-                </div>
+                <Tooltip key={stackName} title={stackName}>
+                  {STACKS[stackName]}
+                </Tooltip>
               );
             })}
           </div>
