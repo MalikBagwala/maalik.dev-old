@@ -68,7 +68,7 @@ export const fetchGitlabData = async (username: string) => {
   const status: number = response.status;
   const responseJson = response.data;
 
-  if (status !== 200) {
+  if (status > 400) {
     return { status, data: {} };
   }
 
