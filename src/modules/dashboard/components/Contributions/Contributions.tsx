@@ -33,7 +33,7 @@ const Contributions = ({}: ContributionsProps) => {
       <SectionHeading title='Contributions' icon={<SiGit className='mr-1' />} />
       <SectionSubHeading>
         <p className='dark:text-neutral-400'>
-          My contributions from last year on github & gitlab combined.
+          My contributions from last year on GitHub and GitLab combined.
         </p>
         <span className='flex gap-4'>
           <Link
