@@ -10,6 +10,7 @@ import axios from 'axios';
 import { SiGit, SiGithub, SiGitlab } from 'react-icons/si';
 import Calendar from './Calendar';
 import Overview from './Overview';
+import { GITLAB_USER_ENDPOINT } from '@/services/github';
 
 type ContributionsProps = {};
 
@@ -17,12 +18,8 @@ const username = 'MalikBagwala';
 const Contributions = ({}: ContributionsProps) => {
   const { data } = useSWR('/api/github?type=personal', fetcher);
 
-  const { data: gData } = useSWR(
-    'https://cors-anywhere.herokuapp.com/https://gitlab.com/users/MalikBagwala/calendar.json',
-    (url: string) => axios.get(url).then((response) => response.data),
-  );
+  const { data: gData } = useSWR(GITLAB_USER_ENDPOINT('MalikBagwala'), fetcher);
 
-  console.log(gData);
   const contributionCalendar =
     data?.contributionsCollection?.contributionCalendar;
 
