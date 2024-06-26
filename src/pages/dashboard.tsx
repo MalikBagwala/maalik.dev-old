@@ -5,7 +5,7 @@ import { SWRConfig } from 'swr';
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import Dashboard from '@/modules/dashboard';
-import { getGithubUser } from '@/services/github';
+import { fetchGitlabData, getGithubUser } from '@/services/github';
 import { getReadStats } from '@/services/wakatime';
 
 interface DashboardPageProps {
@@ -33,11 +33,13 @@ export default DashboardPage;
 export const getStaticProps: GetStaticProps = async () => {
   const readStats = await getReadStats();
   const githubUserPersonal = await getGithubUser('personal');
+  const gitlabData = await fetchGitlabData('MalikBagwala');
   return {
     props: {
       fallback: {
         '/api/read-stats': readStats.data,
         '/api/github?type=personal': githubUserPersonal?.data,
+        GITLAB_USER_ENDPOINT: gitlabData,
       },
     },
     revalidate: 1,
