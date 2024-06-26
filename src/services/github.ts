@@ -59,20 +59,25 @@ export const fetchGithubData = async (
 };
 
 export const fetchGitlabData = async (username: string) => {
-  const response = await axios.get(GITLAB_USER_ENDPOINT(username), {
-    headers: {
-      origin: 'maalik.dev',
-    },
-  });
+  try {
+    const response = await axios.get(GITLAB_USER_ENDPOINT(username), {
+      headers: {
+        origin: 'maalik.dev',
+      },
+    });
 
-  const status: number = response.status;
-  const responseJson = response.data;
+    const status: number = response.status;
+    const responseJson = response.data;
 
-  if (status > 400) {
-    return { status, data: {} };
+    if (status > 400) {
+      return { status, data: {} };
+    }
+
+    return { status, data: responseJson };
+  } catch (error) {
+    console.log(error, 'GITLAB ENDPOINT');
+    return { status: 400, data: {} };
   }
-
-  return { status, data: responseJson };
 };
 export const getGithubUser = async (type: string) => {
   const account = GITHUB_ACCOUNTS.find(
