@@ -26,7 +26,6 @@ const Contributions = ({}: ContributionsProps) => {
     contributionCalendar,
     gData,
   );
-  console.log(combinedContribution, contributionCalendar);
   return (
     <section className='flex flex-col gap-y-2'>
       <SectionHeading title='Contributions' icon={<SiGit className='mr-1' />} />
