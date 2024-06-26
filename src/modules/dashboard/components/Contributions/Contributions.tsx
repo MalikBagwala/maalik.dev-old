@@ -5,12 +5,11 @@ import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 import { fetcher } from '@/services/fetcher';
 
+import { GITLAB_USER_ENDPOINT } from '@/services/github';
 import combineContributions from '@/utils/combineContributions';
-import axios from 'axios';
 import { SiGit, SiGithub, SiGitlab } from 'react-icons/si';
 import Calendar from './Calendar';
 import Overview from './Overview';
-import { GITLAB_USER_ENDPOINT } from '@/services/github';
 
 type ContributionsProps = {};
 
