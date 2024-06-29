@@ -26,10 +26,7 @@ const GITHUB_USER_QUERY = `query($username: String!) {
   }
 }`;
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse,
-) {
+export async function fetchContributions() {
   const response = await fetch('https://api.github.com/graphql', {
     method: 'POST',
     body: JSON.stringify({
@@ -51,7 +48,14 @@ export default async function handler(
     `${baseUrl}/api/proxy/https://gitlab.com/users/MalikBagwala/calendar.json`,
   ).then((data) => data.json());
 
-  const combinedContribution = combineContributions(githubData, gitlabResponse);
+  console.log(gitlabResponse);
+  return combineContributions(githubData, gitlabResponse);
+}
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
+  const combinedContribution = await fetchContributions();
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=86400, stale-while-revalidate=120',

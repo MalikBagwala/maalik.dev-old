@@ -84,23 +84,24 @@ const getALLTimeSinceToday = async (): Promise<{
   };
 };
 
+export async function fetchWakatimeData() {
+  const readStatsResponse = await getReadStats();
+  const allTimeSinceTodayResponse = await getALLTimeSinceToday();
+  return {
+    ...readStatsResponse.data,
+    all_time_since_today: allTimeSinceTodayResponse.data,
+  };
+}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ): Promise<void> {
   try {
-    const readStatsResponse = await getReadStats();
-    const allTimeSinceTodayResponse = await getALLTimeSinceToday();
-
+    const data = await fetchWakatimeData();
     res.setHeader(
       'Cache-Control',
       'public, s-maxage=86400, stale-while-revalidate=120',
     );
-
-    const data = {
-      ...readStatsResponse.data,
-      all_time_since_today: allTimeSinceTodayResponse.data,
-    };
 
     res.status(200).json(data);
   } catch (error) {

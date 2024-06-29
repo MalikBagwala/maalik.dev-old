@@ -6,6 +6,8 @@ import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import Dashboard from '@/modules/dashboard';
 import { baseUrl } from '@/common/constant/baseUrl';
+import { fetchWakatimeData } from './api/wakatime';
+import { fetchContributions } from './api/contributions';
 interface DashboardPageProps {
   fallback: any;
 }
@@ -35,17 +37,14 @@ const DashboardPage: NextPage<DashboardPageProps> = ({ fallback }) => {
 export default DashboardPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const readStats = await await fetch(`${baseUrl}/api/wakatime`).then((data) =>
-  //   data.json(),
-  // );
-  const contributionsCalendar = await fetch(
-    `${baseUrl}/api/contributions`,
-  ).then((data) => data.json());
+  const readStats = await fetchWakatimeData();
+  // const contributionsCalendar = await fetchContributions();
+  // console.log(contributionsCalendar);
   return {
     props: {
       fallback: {
-        // '/api/wakatime': readStats,
-        '/api/contributions': contributionsCalendar,
+        '/api/wakatime': readStats,
+        // '/api/contributions': contributionsCalendar,
       },
     },
     revalidate: 300,
