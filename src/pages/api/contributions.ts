@@ -45,7 +45,7 @@ export async function fetchContributions() {
     response.data?.user?.contributionsCollection?.contributionCalendar;
 
   const gitlabResponse = await fetch(
-    `${baseUrl}/api/proxy/https://gitlab.com/users/MalikBagwala/calendar.json`,
+    `https://maalik.dev/api/proxy/https://gitlab.com/users/MalikBagwala/calendar.json`,
   ).then((data) => data.json());
 
   console.log(gitlabResponse);

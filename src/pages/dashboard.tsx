@@ -38,13 +38,12 @@ export default DashboardPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const readStats = await fetchWakatimeData();
-  // const contributionsCalendar = await fetchContributions();
-  // console.log(contributionsCalendar);
+  const contributionsCalendar = await fetchContributions();
   return {
     props: {
       fallback: {
         '/api/wakatime': readStats,
-        // '/api/contributions': contributionsCalendar,
+        '/api/contributions': contributionsCalendar,
       },
     },
     revalidate: 300,
