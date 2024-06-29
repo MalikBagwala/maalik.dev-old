@@ -5,7 +5,7 @@ import { SWRConfig } from 'swr';
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import Dashboard from '@/modules/dashboard';
-
+import { baseUrl } from '@/common/constant/baseUrl';
 interface DashboardPageProps {
   fallback: any;
 }
@@ -35,10 +35,6 @@ const DashboardPage: NextPage<DashboardPageProps> = ({ fallback }) => {
 export default DashboardPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const baseUrl =
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:3000'
-      : 'https://maalik.dev';
   const readStats = await await fetch(`${baseUrl}/api/wakatime`).then((data) =>
     data.json(),
   );
