@@ -7,7 +7,6 @@ import useSWR from 'swr';
 
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { fetcher } from '@/services/fetcher';
 
 import CodingActiveList from './CodingActiveList';
 import Overview from './Overview';
@@ -17,7 +16,7 @@ interface CodingActiveProps {
 }
 
 const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
-  const { data } = useSWR('/api/read-stats', fetcher);
+  const { data } = useSWR('/api/wakatime');
   const [formattedLastUpdate, setFormattedLastUpdate] = useState<string | null>(
     null,
   );
