@@ -35,16 +35,16 @@ const DashboardPage: NextPage<DashboardPageProps> = ({ fallback }) => {
 export default DashboardPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const readStats = await await fetch(`${baseUrl}/api/wakatime`).then((data) =>
-    data.json(),
-  );
+  // const readStats = await await fetch(`${baseUrl}/api/wakatime`).then((data) =>
+  //   data.json(),
+  // );
   const contributionsCalendar = await fetch(
     `${baseUrl}/api/contributions`,
   ).then((data) => data.json());
   return {
     props: {
       fallback: {
-        '/api/wakatime': readStats,
+        // '/api/wakatime': readStats,
         '/api/contributions': contributionsCalendar,
       },
     },
