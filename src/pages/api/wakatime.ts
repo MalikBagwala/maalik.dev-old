@@ -1,23 +1,24 @@
-import axios from 'axios';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 const STATS_ENDPOINT = 'https://wakatime.com/api/v1/users/current/stats';
 const ALL_TIME_SINCE_TODAY =
   'https://wakatime.com/api/v1/users/current/all_time_since_today';
 
-export const getReadStats = async (): Promise<{
-  status: number;
-  data: any;
-}> => {
-  const response = await axios.get(`${STATS_ENDPOINT}/last_30_days`, {
-    params: {
-      api_key: process.env.WAKATIME_API_KEY,
+const getReadStats = async (): Promise<{ status: number; data: any }> => {
+  const response = await fetch(
+    `${STATS_ENDPOINT}/last_30_days?api_key=${process.env.WAKATIME_API_KEY}`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     },
-  });
+  );
 
   const status = response.status;
   if (status > 400) return { status, data: [] };
 
-  const getData = response.data;
+  const getData = await response.json();
   const start_date = getData?.data?.start ?? null;
   const end_date = getData?.data?.end ?? null;
   const last_update = getData?.data?.modified_at ?? null;
@@ -53,21 +54,24 @@ export const getReadStats = async (): Promise<{
   };
 };
 
-export const getALLTimeSinceToday = async (): Promise<{
+const getALLTimeSinceToday = async (): Promise<{
   status: number;
   data: any;
 }> => {
-  const response = await axios.get(ALL_TIME_SINCE_TODAY, {
-    params: {
-      api_key: process.env.WAKATIME_API_KEY,
+  const response = await fetch(
+    `${ALL_TIME_SINCE_TODAY}?api_key=${process.env.WAKATIME_API_KEY}`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     },
-  });
+  );
 
   const status = response.status;
-
   if (status > 400) return { status, data: {} };
 
-  const getData = response.data;
+  const getData = await response.json();
 
   const data = {
     text: getData?.data?.text,
@@ -79,3 +83,27 @@ export const getALLTimeSinceToday = async (): Promise<{
     data,
   };
 };
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> {
+  try {
+    const readStatsResponse = await getReadStats();
+    const allTimeSinceTodayResponse = await getALLTimeSinceToday();
+
+    res.setHeader(
+      'Cache-Control',
+      'public, s-maxage=86400, stale-while-revalidate=120',
+    );
+
+    const data = {
+      ...readStatsResponse.data,
+      all_time_since_today: allTimeSinceTodayResponse.data,
+    };
+
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+}

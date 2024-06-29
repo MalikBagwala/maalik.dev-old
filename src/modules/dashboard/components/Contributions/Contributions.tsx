@@ -3,10 +3,7 @@ import useSWR from 'swr';
 
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { fetcher } from '@/services/fetcher';
 
-import { GITLAB_USER_ENDPOINT } from '@/services/github';
-import combineContributions from '@/utils/combineContributions';
 import { SiGit, SiGithub, SiGitlab } from 'react-icons/si';
 import Calendar from './Calendar';
 import Overview from './Overview';
@@ -15,17 +12,7 @@ type ContributionsProps = {};
 
 const username = 'MalikBagwala';
 const Contributions = ({}: ContributionsProps) => {
-  const { data } = useSWR('/api/github?type=personal', fetcher);
-
-  const { data: gData } = useSWR(GITLAB_USER_ENDPOINT('MalikBagwala'), fetcher);
-
-  const contributionCalendar =
-    data?.contributionsCollection?.contributionCalendar;
-
-  const combinedContribution = combineContributions(
-    contributionCalendar,
-    gData,
-  );
+  const { data } = useSWR('/api/contributions');
   return (
     <section className='flex flex-col gap-y-2'>
       <SectionHeading title='Contributions' icon={<SiGit className='mr-1' />} />
@@ -57,8 +44,8 @@ const Contributions = ({}: ContributionsProps) => {
 
       {data && (
         <div className='space-y-3'>
-          <Overview data={combinedContribution} />
-          <Calendar data={combinedContribution} />
+          <Overview data={data} />
+          <Calendar data={data} />
         </div>
       )}
     </section>
