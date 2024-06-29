@@ -1,3 +1,4 @@
+import { baseUrl } from '@/common/constant/baseUrl';
 import combineContributions from '@/utils/combineContributions';
 import { NextApiRequest, NextApiResponse } from 'next';
 
@@ -47,7 +48,7 @@ export default async function handler(
     response.data?.user?.contributionsCollection?.contributionCalendar;
 
   const gitlabResponse = await fetch(
-    'https://gitlab.com/users/MalikBagwala/calendar.json',
+    `${baseUrl}/api/proxy/https://gitlab.com/users/MalikBagwala/calendar.json`,
   ).then((data) => data.json());
 
   const combinedContribution = combineContributions(githubData, gitlabResponse);
