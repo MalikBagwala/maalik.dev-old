@@ -5,9 +5,8 @@ import { SWRConfig } from 'swr';
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import Dashboard from '@/modules/dashboard';
-import { baseUrl } from '@/common/constant/baseUrl';
-import { fetchWakatimeData } from './api/wakatime';
 import { fetchContributions } from './api/contributions';
+import { fetchWakatimeData } from './api/wakatime';
 interface DashboardPageProps {
   fallback: any;
 }
