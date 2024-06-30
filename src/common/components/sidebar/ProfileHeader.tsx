@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import { MdVerified as VerifiedIcon } from 'react-icons/md';
-import CustomImage from '../elements/Image';
+import CustomImage from '../elements/CustomImage';
 import Tooltip from '../elements/Tooltip';
 interface ProfileHeaderProps {
   expandMenu: boolean;

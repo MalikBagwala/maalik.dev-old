@@ -3,7 +3,7 @@ import { AiFillPushpin as PinIcon } from 'react-icons/ai';
 import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi';
 
 import Card from '@/common/components/elements/Card';
-import CustomImage from '@/common/components/elements/Image';
+import CustomImage from '@/common/components/elements/CustomImage';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
 
