@@ -3,7 +3,7 @@ import duration from 'dayjs/plugin/duration';
 import { BsBuildings as CompanyIcon } from 'react-icons/bs';
 
 import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
+import CustomImage from '@/common/components/elements/Image';
 import { durationBetweenDates, formatDate } from '@/common/helpers';
 import { CareerProps } from '@/common/types/careers';
 dayjs.extend(duration);
@@ -19,7 +19,7 @@ const CareerCard = ({
   return (
     <Card className='flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800'>
       {logo ? (
-        <Image src={logo} width={55} height={55} alt={company} />
+        <CustomImage src={logo} width={55} height={55} alt={company} />
       ) : (
         <CompanyIcon size={30} />
       )}

@@ -3,7 +3,7 @@ import { AiFillPushpin as PinIcon } from 'react-icons/ai';
 import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi';
 
 import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
+import CustomImage from '@/common/components/elements/Image';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
 
@@ -21,7 +21,7 @@ const ProjectCard = ({ fields }: any) => {
         )}
         <div className='relative'>
           {thumbSrc && (
-            <Image
+            <CustomImage
               src={`https:${thumbSrc}`}
               width={400}
               height={200}

@@ -4,11 +4,11 @@ import clsx from 'clsx';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import { useState } from 'react';
 
-type ImageProps = {
+type CustomImageProps = {
   rounded?: string;
 } & NextImageProps;
 
-const Image = (props: ImageProps) => {
+const CustomImage = (props: CustomImageProps) => {
   const { alt, src, className, rounded, ...rest } = props;
   const [isLoading, setLoading] = useState(true);
 
@@ -32,7 +32,6 @@ const Image = (props: ImageProps) => {
         src={src}
         alt={alt}
         loading='lazy'
-        // priority={true}
         quality={100}
         onLoadingComplete={() => setLoading(false)}
         {...rest}
@@ -40,4 +39,4 @@ const Image = (props: ImageProps) => {
     </div>
   );
 };
-export default Image;
+export default CustomImage;

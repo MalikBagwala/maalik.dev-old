@@ -1,4 +1,4 @@
-import Image from '@/common/components/elements/Image';
+import CustomImage from '@/common/components/elements/Image';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
 import { ProjectItemProps } from '@/common/types/projects';
@@ -15,7 +15,7 @@ const options: Options = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET](node) {
       return (
-        <Image
+        <CustomImage
           height={400}
           width={800}
           alt={node?.data?.target?.fields?.title}
@@ -60,7 +60,7 @@ const ProjectDetail = ({ project }: ProjectItemProps) => {
         <ProjectLink title={title} linkDemo={live} linkSourceCode={source} />
       </div>
       {cover ? (
-        <Image
+        <CustomImage
           src={getAssetUrl(cover)}
           width={800}
           height={400}
