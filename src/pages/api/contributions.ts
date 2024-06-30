@@ -48,7 +48,6 @@ export async function fetchContributions() {
     `https://maalik.dev/api/proxy/https://gitlab.com/users/MalikBagwala/calendar.json`,
   ).then((data) => data.json());
 
-  console.log(gitlabResponse);
   return combineContributions(githubData, gitlabResponse);
 }
 export default async function handler(
