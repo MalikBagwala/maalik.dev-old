@@ -1,7 +1,7 @@
 import { BsBuildings as CompanyIcon } from 'react-icons/bs';
 
 import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
+import CustomImage from '@/common/components/elements/Image';
 import { EducationProps } from '@/common/types/education';
 
 const EducationCard = ({
@@ -16,7 +16,7 @@ const EducationCard = ({
   return (
     <Card className='flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-900'>
       {logo ? (
-        <Image src={logo} width={55} height={55} alt={school} />
+        <CustomImage src={logo} width={55} height={55} alt={school} />
       ) : (
         <CompanyIcon size={50} />
       )}

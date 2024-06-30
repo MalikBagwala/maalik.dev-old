@@ -1,10 +1,8 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import { MdVerified as VerifiedIcon } from 'react-icons/md';
-
-import Image from '../elements/Image';
+import CustomImage from '../elements/Image';
 import Tooltip from '../elements/Tooltip';
-
 interface ProfileHeaderProps {
   expandMenu: boolean;
   imageSize: number;
@@ -18,7 +16,7 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
         expandMenu && 'flex-col !items-start',
       )}
     >
-      <Image
+      <CustomImage
         src='/images/MalikBagwala.png'
         alt='Malik Bagwala'
         width={expandMenu ? 80 : imageSize}
