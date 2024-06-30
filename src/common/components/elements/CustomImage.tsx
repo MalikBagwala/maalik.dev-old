@@ -1,12 +1,12 @@
 'use client';
 
 import clsx from 'clsx';
-import NextImage, { ImageProps as NextImageProps } from 'next/image';
+import Image, { ImageProps } from 'next/image';
 import { useState } from 'react';
 
 type CustomImageProps = {
   rounded?: string;
-} & NextImageProps;
+} & ImageProps;
 
 const CustomImage = (props: CustomImageProps) => {
   const { alt, src, className, rounded, ...rest } = props;
@@ -20,7 +20,7 @@ const CustomImage = (props: CustomImageProps) => {
         rounded,
       )}
     >
-      <NextImage
+      <Image
         className={clsx(
           'duration-700 ease-in-out',
           isLoading
@@ -33,7 +33,7 @@ const CustomImage = (props: CustomImageProps) => {
         alt={alt}
         loading='lazy'
         quality={100}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
         {...rest}
       />
     </div>
