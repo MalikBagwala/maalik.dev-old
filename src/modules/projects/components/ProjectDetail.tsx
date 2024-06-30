@@ -1,4 +1,4 @@
-import CustomImage from '@/common/components/elements/Image';
+import CustomImage from '@/common/components/elements/CustomImage';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
 import { ProjectItemProps } from '@/common/types/projects';

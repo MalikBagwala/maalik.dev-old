@@ -3,7 +3,7 @@ import duration from 'dayjs/plugin/duration';
 import { BsBuildings as CompanyIcon } from 'react-icons/bs';
 
 import Card from '@/common/components/elements/Card';
-import CustomImage from '@/common/components/elements/Image';
+import CustomImage from '@/common/components/elements/CustomImage';
 import { durationBetweenDates, formatDate } from '@/common/helpers';
 import { CareerProps } from '@/common/types/careers';
 dayjs.extend(duration);
