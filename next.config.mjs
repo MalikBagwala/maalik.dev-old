@@ -10,16 +10,10 @@ const nextConfig = {
         hostname: 'picsum.photos',
       },
       {
-        hostname: 'res.cloudinary.com',
-      },
-      {
-        hostname: 'media.dev.to',
-      },
-      {
         hostname: 'maalik.dev',
       },
       {
-        hostname: 'images.ctfassets.net',
+        hostname: '*.ctfassets.net',
       },
     ],
   },

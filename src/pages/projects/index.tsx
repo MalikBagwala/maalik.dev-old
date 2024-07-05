@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps<ProjectsPageProps> = async () => {
   const contentType = await contentfulClient.getContentType(CONTENT_TYPE_ID);
   const projects = await contentfulClient.getEntries<ProjectSkeleton>({
     content_type: CONTENT_TYPE_ID,
-    order: ['-fields.isFeatured' as any, '-sys.updatedAt'],
+    order: ['-fields.weight', 'fields.isFeatured', '-sys.updatedAt'] as any[],
   });
   return {
     props: {
