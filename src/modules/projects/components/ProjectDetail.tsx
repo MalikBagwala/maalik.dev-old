@@ -14,14 +14,18 @@ import { BLOCKS } from '@contentful/rich-text-types';
 const options: Options = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET](node) {
-      return (
-        <CustomImage
-          height={400}
-          width={800}
-          alt={node?.data?.target?.fields?.title}
-          src={getAssetUrl(node?.data.target)}
-        />
-      );
+      const type = node?.data?.target?.fields?.file?.contentType;
+      const fileUrl = getAssetUrl(node?.data.target);
+      const alt = node?.data?.target?.fields?.title;
+      if (type.startsWith('image'))
+        return <CustomImage height={400} width={800} alt={alt} src={fileUrl} />;
+      else if (type.startsWith('video')) {
+        return (
+          <video controls>
+            <source src={fileUrl} type={type} />
+          </video>
+        );
+      }
     },
     [BLOCKS.HEADING_1](_, children) {
       return <h1>{children}</h1>;
