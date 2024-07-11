@@ -22,7 +22,7 @@ const options: Options = {
       else if (type.startsWith('video')) {
         return (
           <video controls>
-            <source src={fileUrl} type={type} />
+            <source src={fileUrl} type={'video/mp4'} />
           </video>
         );
       }
