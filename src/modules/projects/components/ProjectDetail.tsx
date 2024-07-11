@@ -39,6 +39,9 @@ const options: Options = {
     [BLOCKS.PARAGRAPH](_, children) {
       return <p className='text-gray-700 dark:text-gray-300'>{children}</p>;
     },
+    [BLOCKS.OL_LIST](_, children) {
+      return <ol className='list-decimal pl-5'>{children}</ol>;
+    },
   },
 };
 const ProjectDetail = ({ project }: ProjectItemProps) => {
@@ -51,7 +54,7 @@ const ProjectDetail = ({ project }: ProjectItemProps) => {
             Tech Stack :
           </span>
           <div className='flex flex-wrap items-baseline gap-3'>
-            {stack?.map((stack: any, index: number) => {
+            {stack?.map((stack: any) => {
               const stackName = stack.fields?.name?.toLowerCase();
               return (
                 <Tooltip key={stackName} title={stackName}>
