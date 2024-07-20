@@ -18,7 +18,7 @@ const CareerList = () => {
         </SectionSubHeading>
       </div>
 
-      <div className='grid md:grid-cols-2 gap-4'>
+      <div className='grid gap-3'>
         {CAREERS?.map((career, index) => (
           <CareerCard key={index} {...career} />
         ))}
