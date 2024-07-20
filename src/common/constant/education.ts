@@ -4,7 +4,7 @@ export const EDUCATION: EducationProps[] = [
   {
     school: 'Sandip University',
     major: 'Computer Applications',
-    location: 'Nashik, Maharashtra',
+    location: 'Nashik, India 🇮🇳',
     degree: "Masters's degree",
     start_year: 2020,
     end_year: 2022,
@@ -14,7 +14,7 @@ export const EDUCATION: EducationProps[] = [
   {
     school: 'HPT Arts and RYK College Of Science',
     major: 'Computer Science (CS)',
-    location: 'Nashik, Maharashtra',
+    location: 'Nashik, India 🇮🇳',
     degree: "Bachelor's degree",
     start_year: 2016,
     end_year: 2019,
