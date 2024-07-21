@@ -1,15 +1,16 @@
+import { NextSeoProps } from 'next-seo';
 const canonicalUrl = 'https://maalik.dev';
 const metaImage = 'https://maalik.dev/og.jpg';
-const metaDescription =
-  'Seasoned software engineer with 5+ years of experience building enterprise applications across the stack, from scratch. React | Django | PostgreSQL | Kuberntes | TypeScript';
+const metaDescription = `Malik is a highly skilled Senior Full-Stack Engineer (ex-CTO) with 5+ years of experience. He is proficient in React, TypeScript, Next.js, Python, PostgreSQL, and Kubernetes. Currently, he is exploring the world of LLMs and Neural Nets`;
+const metaTitle =
+  'Malik Bagwala | Senior Fullstack Engineer, ex-CTO with 5+ years of experience';
 
-const defaultSEOConfig = {
-  defaultTitle: 'Malik Bagwala - Full-Stack Engineer',
+const SEO: NextSeoProps = {
+  defaultTitle: metaTitle,
   description: metaDescription,
   canonical: canonicalUrl,
   openGraph: {
-    canonical: canonicalUrl,
-    title: 'Malik Bagwala - Full-Stack Engineer',
+    title: metaTitle,
     description: metaDescription,
     type: 'website',
     images: [
@@ -37,9 +38,8 @@ const defaultSEOConfig = {
   twitter: {
     handle: 'MalikBagwala',
     site: 'https://maalik.dev',
-    image: 'https://maalik.dev/og.png',
     cardType: 'summary_large_image',
   },
 };
 
-export default defaultSEOConfig;
+export default SEO;
