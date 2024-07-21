@@ -1,7 +1,15 @@
 import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 import { ReactNode } from 'react';
+import { Rubik } from 'next/font/google';
 
+const rubik = Rubik({
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-rubik',
+  subsets: ['latin', 'latin-ext'],
+});
 import useHasMounted from '@/hooks/useHasMounted';
 
 import Sidebar from '../atoms/Sidebar';
@@ -23,6 +31,8 @@ const Layout = ({ children }: LayoutProps) => {
         className={clsx(
           'max-w-6xl mx-auto lg:px-8 lg:py-4 xl:py-8',
           isDarkTheme ? 'dark:text-darkText' : '',
+          rubik.variable,
+          'font-sans',
         )}
       >
         <div className='flex flex-col lg:flex-row lg:gap-5'>
