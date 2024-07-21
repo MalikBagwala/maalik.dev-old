@@ -1,8 +1,8 @@
 import { GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 
-import Container from '@/components/elements/Container';
-import PageHeading from '@/components/elements/PageHeading';
+import Container from '@/components/atoms/Container';
+import PageHeading from '@/components/atoms/PageHeading';
 import Projects from '@/modules/projects';
 import contentfulClient from '@/services/contentful';
 import { EntryFieldTypes } from 'contentful';

@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import useSWR from 'swr';
 
-import SectionHeading from '@/components/elements/SectionHeading';
-import SectionSubHeading from '@/components/elements/SectionSubHeading';
+import SectionHeading from '@/components/atoms/SectionHeading';
+import SectionSubHeading from '@/components/atoms/SectionSubHeading';
 
 import { SiGit, SiGithub, SiGitlab } from 'react-icons/si';
 import Calendar from './Calendar';

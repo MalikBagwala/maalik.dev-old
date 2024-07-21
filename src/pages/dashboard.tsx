@@ -2,8 +2,8 @@ import { GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 import { SWRConfig } from 'swr';
 
-import Container from '@/components/elements/Container';
-import PageHeading from '@/components/elements/PageHeading';
+import Container from '@/components/atoms/Container';
+import PageHeading from '@/components/atoms/PageHeading';
 import Dashboard from '@/modules/dashboard';
 import { fetchContributions } from './api/contributions';
 import { fetchWakatimeData } from './api/wakatime';

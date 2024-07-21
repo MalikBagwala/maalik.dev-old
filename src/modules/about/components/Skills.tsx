@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import { ReactNode, useEffect, useState } from 'react';
 import { BiCodeAlt as SkillsIcon } from 'react-icons/bi';
 
-import InfiniteLoopSlider from '@/components/elements/InfiniteLoopSlider';
-import SectionHeading from '@/components/elements/SectionHeading';
-import SectionSubHeading from '@/components/elements/SectionSubHeading';
+import InfiniteLoopSlider from '@/components/atoms/InfiniteLoopSlider';
+import SectionHeading from '@/components/atoms/SectionHeading';
+import SectionSubHeading from '@/components/atoms/SectionSubHeading';
 import { STACKS } from '@/constant/stacks';
 
 const Tag = ({ icon, title }: { icon: ReactNode; title: string }) => (

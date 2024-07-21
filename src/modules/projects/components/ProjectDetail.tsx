@@ -1,5 +1,5 @@
-import CustomImage from '@/components/elements/CustomImage';
-import Tooltip from '@/components/elements/Tooltip';
+import CustomImage from '@/components/atoms/CustomImage';
+import Tooltip from '@/components/atoms/Tooltip';
 import { STACKS } from '@/constant/stacks';
 import { ProjectItemProps } from '@/types/projects';
 

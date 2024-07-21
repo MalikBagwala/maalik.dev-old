@@ -8,8 +8,8 @@ import useIsMobile from '@/hooks/useIsMobile';
 import MobileMenu from './MobileMenu';
 import MobileMenuButton from './MobileMenuButton';
 import ProfileHeader from './ProfileHeader';
-import Status from '../elements/Status';
-import ThemeToggleButton from '../elements/ThemeToggleButton';
+import Status from '../atoms/Status';
+import ThemeToggleButton from '../atoms/ThemeToggleButton';
 
 const Profile = () => {
   const isMobile = useIsMobile();

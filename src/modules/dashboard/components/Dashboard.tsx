@@ -1,4 +1,4 @@
-import Breakline from '@/components/elements/Breakline';
+import Breakline from '@/components/atoms/Breakline';
 
 import CodingActive from './CodingActive';
 import Contributions from './Contributions';

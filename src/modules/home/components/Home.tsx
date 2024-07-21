@@ -1,4 +1,4 @@
-import Breakline from '@/components/elements/Breakline';
+import Breakline from '@/components/atoms/Breakline';
 
 import Introduction from './Introduction';
 import Services from './Services';

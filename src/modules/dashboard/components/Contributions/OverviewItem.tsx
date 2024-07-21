@@ -1,4 +1,4 @@
-import AnimateCounter from '@/components/elements/AnimateCounter';
+import AnimateCounter from '@/components/atoms/AnimateCounter';
 
 interface OverviewItemProps {
   label: string;

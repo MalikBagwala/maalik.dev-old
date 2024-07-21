@@ -1,4 +1,4 @@
-import Breakline from '@/components/elements/Breakline';
+import Breakline from '@/components/atoms/Breakline';
 
 import CareerList from './CareerList';
 import EducationList from './EducationList';

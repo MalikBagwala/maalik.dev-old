@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import EmptyState from '@/components/elements/EmptyState';
+import EmptyState from '@/components/atoms/EmptyState';
 import { ProjectsProps } from '@/types/projects';
 
 import ProjectCard from './ProjectCard';
