@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 
 import useHasMounted from '@/hooks/useHasMounted';
 
-import Sidebar from './partials/Sidebar';
+import Sidebar from '../atoms/Sidebar';
 
 interface LayoutProps {
   children: ReactNode;

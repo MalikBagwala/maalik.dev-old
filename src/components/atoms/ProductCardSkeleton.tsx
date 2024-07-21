@@ -1,7 +1,7 @@
 import Skeleton from 'react-loading-skeleton';
 
-import Card from '../atoms/Card';
-import SkeletonLoader from '../atoms/SkeletonLoader';
+import Card from './Card';
+import SkeletonLoader from './SkeletonLoader';
 
 const ProductCardSkeleton = () => {
   return (
