@@ -1,7 +1,7 @@
 import { HiOutlineBriefcase as CareerIcon } from 'react-icons/hi';
 
-import SectionHeading from '@/components/elements/SectionHeading';
-import SectionSubHeading from '@/components/elements/SectionSubHeading';
+import SectionHeading from '@/components/atoms/SectionHeading';
+import SectionSubHeading from '@/components/atoms/SectionSubHeading';
 import { CAREERS } from '@/constant/careers';
 
 import CareerCard from './CareerCard';

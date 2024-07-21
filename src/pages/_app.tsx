@@ -13,10 +13,9 @@ import Layout from '@/components/layouts';
 
 import defaultSEOConfig from '../../next-seo.config';
 
-const ProgressBar = dynamic(
-  () => import('../components/elements/ProgressBar'),
-  { ssr: false },
-);
+const ProgressBar = dynamic(() => import('../components/atoms/ProgressBar'), {
+  ssr: false,
+});
 
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {

@@ -1,7 +1,7 @@
 import useIsMobile from '@/hooks/useIsMobile';
 
 import Copyright from './Copyright';
-import Breakline from '../../elements/Breakline';
+import Breakline from '../../atoms/Breakline';
 import Navigation from '../../sidebar/Navigation';
 import Profile from '../../sidebar/Profile';
 

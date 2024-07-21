@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 
-import Container from '@/components/elements/Container';
-import PageHeading from '@/components/elements/PageHeading';
+import Container from '@/components/atoms/Container';
+import PageHeading from '@/components/atoms/PageHeading';
 import About from '@/modules/about';
 
 const PAGE_TITLE = 'About';

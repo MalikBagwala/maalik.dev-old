@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 
-import BackButton from '@/components/elements/BackButton';
-import Container from '@/components/elements/Container';
-import PageHeading from '@/components/elements/PageHeading';
+import BackButton from '@/components/atoms/BackButton';
+import Container from '@/components/atoms/Container';
+import PageHeading from '@/components/atoms/PageHeading';
 import ProjectDetail from '@/modules/projects/components/ProjectDetail';
 import contentfulClient from '@/services/contentful';
 import { ProjectSkeleton } from '.';

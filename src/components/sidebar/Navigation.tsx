@@ -1,8 +1,8 @@
 import { MENU_ITEMS, SOCIAL_MEDIA } from '@/constant/menu';
 
 import Menu from './Menu';
-import Breakline from '../elements/Breakline';
-import SocialMedia from '../elements/SocialMedia';
+import Breakline from '../atoms/Breakline';
+import SocialMedia from '../atoms/SocialMedia';
 
 const Navigation = () => {
   const filterdMenu = MENU_ITEMS?.filter((item) => item?.isShow);

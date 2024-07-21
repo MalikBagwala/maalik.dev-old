@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { AiFillPushpin as PinIcon } from 'react-icons/ai';
 import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi';
 
-import Card from '@/components/elements/Card';
-import CustomImage from '@/components/elements/CustomImage';
-import Tooltip from '@/components/elements/Tooltip';
+import Card from '@/components/atoms/Card';
+import CustomImage from '@/components/atoms/CustomImage';
+import Tooltip from '@/components/atoms/Tooltip';
 import { STACKS } from '@/constant/stacks';
 
 const ProjectCard = ({ fields }: any) => {
