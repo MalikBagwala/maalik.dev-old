@@ -1,9 +1,9 @@
 import useIsMobile from '@/hooks/useIsMobile';
 
 import Copyright from './Copyright';
-import Breakline from '../../atoms/Breakline';
-import Navigation from '../../sidebar/Navigation';
-import Profile from '../../sidebar/Profile';
+import Breakline from './Breakline';
+import Navigation from '../sidebar/Navigation';
+import Profile from '../sidebar/Profile';
 
 const Sidebar = () => {
   const isMobile = useIsMobile();
