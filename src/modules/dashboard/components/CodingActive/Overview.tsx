@@ -1,4 +1,4 @@
-import { formatDate } from '@/common/helpers';
+import { formatDate } from '@/helpers';
 
 import OverviewItem from './OverviewItem';
 

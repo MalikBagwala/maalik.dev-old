@@ -1,4 +1,4 @@
-import useIsMobile from '@/common/hooks/useIsMobile';
+import useIsMobile from '@/hooks/useIsMobile';
 
 import Copyright from './Copyright';
 import Breakline from '../../elements/Breakline';

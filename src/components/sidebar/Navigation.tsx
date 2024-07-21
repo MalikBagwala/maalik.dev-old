@@ -1,4 +1,4 @@
-import { MENU_ITEMS, SOCIAL_MEDIA } from '@/common/constant/menu';
+import { MENU_ITEMS, SOCIAL_MEDIA } from '@/constant/menu';
 
 import Menu from './Menu';
 import Breakline from '../elements/Breakline';

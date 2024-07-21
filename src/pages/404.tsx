@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 
-import Container from '@/common/components/elements/Container';
+import Container from '@/components/elements/Container';
 
 const Custom404: NextPage = () => {
   return (

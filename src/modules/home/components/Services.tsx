@@ -3,7 +3,7 @@ import { BiRocket as RocketIcon } from 'react-icons/bi';
 import { FaTelegramPlane as TelegramIcon } from 'react-icons/fa';
 import { HiOutlineMail as EmailIcon } from 'react-icons/hi';
 
-import Button from '@/common/components/elements/Button';
+import Button from '@/components/elements/Button';
 interface ContactProps {
   title: string;
   icon: ReactNode;

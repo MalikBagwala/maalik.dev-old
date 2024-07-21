@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { MenuItemProps } from '@/common/types/menu';
+import { MenuItemProps } from '@/types/menu';
 
 import Tooltip from './Tooltip';
 

@@ -5,16 +5,16 @@ import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 import { useEffect } from 'react';
 
-import '@/common/styles/globals.css';
+import '@/styles/globals.css';
 import 'aos/dist/aos.css';
 import 'tailwindcss/tailwind.css';
 
-import Layout from '@/common/components/layouts';
+import Layout from '@/components/layouts';
 
 import defaultSEOConfig from '../../next-seo.config';
 
 const ProgressBar = dynamic(
-  () => import('../common/components/elements/ProgressBar'),
+  () => import('../components/elements/ProgressBar'),
   { ssr: false },
 );
 

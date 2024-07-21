@@ -1,7 +1,7 @@
-import CustomImage from '@/common/components/elements/CustomImage';
-import Tooltip from '@/common/components/elements/Tooltip';
-import { STACKS } from '@/common/constant/stacks';
-import { ProjectItemProps } from '@/common/types/projects';
+import CustomImage from '@/components/elements/CustomImage';
+import Tooltip from '@/components/elements/Tooltip';
+import { STACKS } from '@/constant/stacks';
+import { ProjectItemProps } from '@/types/projects';
 
 import getAssetUrl from '@/utils/getAssetUrl';
 import ProjectLink from './ProjectLink';
