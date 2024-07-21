@@ -21,7 +21,7 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
   return (
     <>
       <NextSeo
-        title={`${PAGE_TITLE} - Project Malik Bagwala`}
+        title={`Malik Bagwala | ${title}`}
         description={PAGE_DESCRIPTION}
         canonical={canonicalUrl}
         openGraph={{
@@ -37,7 +37,7 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
               url: `https://${thumbnail?.fields?.file?.url}`,
             },
           ],
-          siteName: 'Malik Bagwala | Projects',
+          siteName: 'maalik.dev/projects',
         }}
       />
       <Container data-aos='fade-up'>

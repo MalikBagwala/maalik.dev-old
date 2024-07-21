@@ -7,7 +7,6 @@ import Home from '@/modules/home';
 const HomePage: NextPage = () => {
   return (
     <>
-      <NextSeo title='Malik Bagwala - Personal Website' />
       <Container data-aos='fade-up'>
         <Home />
       </Container>

@@ -24,7 +24,10 @@ const DashboardPage: NextPage<DashboardPageProps> = ({ fallback }) => {
           fetch(resource, init).then((res) => res.json()),
       }}
     >
-      <NextSeo title={`${PAGE_TITLE} - Malik Bagwala`} />
+      <NextSeo
+        title={`Malik Bagwala | ${PAGE_TITLE}`}
+        description={PAGE_DESCRIPTION}
+      />
       <Container data-aos='fade-up'>
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <Dashboard />
