@@ -1,8 +1,8 @@
 import { BsBuildings as CompanyIcon } from 'react-icons/bs';
 
-import Card from '@/common/components/elements/Card';
-import CustomImage from '@/common/components/elements/CustomImage';
-import { EducationProps } from '@/common/types/education';
+import Card from '@/components/elements/Card';
+import CustomImage from '@/components/elements/CustomImage';
+import { EducationProps } from '@/types/education';
 
 const EducationCard = ({
   school,

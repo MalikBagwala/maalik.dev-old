@@ -1,4 +1,4 @@
-import { baseUrl } from '@/common/constant/baseUrl';
+import { baseUrl } from '@/constant/baseUrl';
 import combineContributions from '@/utils/combineContributions';
 import { NextApiRequest, NextApiResponse } from 'next';
 

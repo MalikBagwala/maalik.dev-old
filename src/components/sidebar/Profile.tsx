@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-import { MenuContext } from '@/common/context/MenuContext';
-import useIsMobile from '@/common/hooks/useIsMobile';
+import { MenuContext } from '@/context/MenuContext';
+import useIsMobile from '@/hooks/useIsMobile';
 
 import MobileMenu from './MobileMenu';
 import MobileMenuButton from './MobileMenuButton';

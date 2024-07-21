@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 import { ReactNode } from 'react';
 
-import useHasMounted from '@/common/hooks/useHasMounted';
+import useHasMounted from '@/hooks/useHasMounted';
 
 import Sidebar from './partials/Sidebar';
 

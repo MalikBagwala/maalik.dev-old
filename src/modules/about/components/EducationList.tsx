@@ -1,8 +1,8 @@
 import { TbSchool as EducationIcon } from 'react-icons/tb';
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { EDUCATION } from '@/common/constant/education';
+import SectionHeading from '@/components/elements/SectionHeading';
+import SectionSubHeading from '@/components/elements/SectionSubHeading';
+import { EDUCATION } from '@/constant/education';
 
 import EducationCard from './EducationCard';
 

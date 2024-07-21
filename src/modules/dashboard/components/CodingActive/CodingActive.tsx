@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import { SiWakatime as WakatimeIcon } from 'react-icons/si';
 import useSWR from 'swr';
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
+import SectionHeading from '@/components/elements/SectionHeading';
+import SectionSubHeading from '@/components/elements/SectionSubHeading';
 
 import CodingActiveList from './CodingActiveList';
 import Overview from './Overview';

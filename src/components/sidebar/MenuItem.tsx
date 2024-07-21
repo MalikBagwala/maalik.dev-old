@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import { useContext, useState } from 'react';
 import { BsArrowRightShort as ExternalLinkIcon } from 'react-icons/bs';
 
-import { MenuContext } from '@/common/context/MenuContext';
-import { MenuItemProps } from '@/common/types/menu';
+import { MenuContext } from '@/context/MenuContext';
+import { MenuItemProps } from '@/types/menu';
 
 const MenuItem = ({
   title,
