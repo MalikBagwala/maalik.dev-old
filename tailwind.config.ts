@@ -4,6 +4,9 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-rubik)'],
+      },
       colors: {
         darkText: '#E4E6EB',
         dark: '#121212',
