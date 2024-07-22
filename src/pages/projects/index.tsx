@@ -27,7 +27,7 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({
   return (
     <>
       <NextSeo title={`Malik Bagwala | ${title}`} />
-      <Container data-aos='fade-up'>
+      <Container data-aos='fade-left'>
         <PageHeading title={title} description={subtitle} />
         <Projects projects={response.items} />
       </Container>

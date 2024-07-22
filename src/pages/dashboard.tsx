@@ -28,7 +28,7 @@ const DashboardPage: NextPage<DashboardPageProps> = ({ fallback }) => {
         title={`Malik Bagwala | ${PAGE_TITLE}`}
         description={PAGE_DESCRIPTION}
       />
-      <Container data-aos='fade-up'>
+      <Container data-aos='fade-left'>
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <Dashboard />
       </Container>
