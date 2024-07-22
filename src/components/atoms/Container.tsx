@@ -1,14 +1,12 @@
-import { ReactNode } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
+import { ClassNameValue, twMerge } from 'tailwind-merge';
+type ContainerProps = ComponentPropsWithoutRef<'div'> & {
+  className?: ClassNameValue;
+};
 
-interface ContainerProps {
-  children: ReactNode;
-  className?: string;
-  [propName: string]: ReactNode | string | undefined;
-}
-
-const Container = ({ children, className = '', ...others }: ContainerProps) => {
+const Container = ({ children, className, ...others }: ContainerProps) => {
   return (
-    <div className={`mt-20 mb-10 lg:mt-0 p-8 ${className} `} {...others}>
+    <div className={twMerge('mt-20 mb-10 lg:mt-0 p-8', className)} {...others}>
       {children}
     </div>
   );
