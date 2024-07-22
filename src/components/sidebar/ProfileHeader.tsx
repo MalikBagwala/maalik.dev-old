@@ -1,7 +1,8 @@
+import Avatar from '@/images/avatar.png';
 import clsx from 'clsx';
+import Image from 'next/image';
 import Link from 'next/link';
 import { MdVerified as VerifiedIcon } from 'react-icons/md';
-import CustomImage from '../atoms/CustomImage';
 import Tooltip from '../atoms/Tooltip';
 interface ProfileHeaderProps {
   expandMenu: boolean;
@@ -16,13 +17,13 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
         expandMenu && 'flex-col !items-start',
       )}
     >
-      <CustomImage
-        src='/images/MalikBagwala.png'
-        alt='Malik Bagwala'
+      <Image
+        src={Avatar}
+        alt='Profile Picture'
         width={expandMenu ? 80 : imageSize}
         height={expandMenu ? 80 : imageSize}
-        rounded='rounded-full'
-        className='lg:hover:scale-105'
+        placeholder='blur'
+        className='rounded-full'
       />
       <div className='flex gap-2 items-center mt-1 lg:mt-4'>
         <Link href='/' passHref>
