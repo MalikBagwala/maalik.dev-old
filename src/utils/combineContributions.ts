@@ -14,6 +14,7 @@ export default function combineContributions(
 
   // Clone the GitHub calendar to avoid mutating the original object
   const newStats = structuredClone(githubCalendar);
+  if (!newStats) return null;
   let maxCommits = 0;
 
   // Iterate through the weeks and days of the GitHub calendar
