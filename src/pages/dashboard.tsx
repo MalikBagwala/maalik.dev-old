@@ -44,8 +44,8 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       fallback: {
-        '/api/wakatime': readStats,
-        '/api/contributions': contributionsCalendar,
+        '/api/wakatime': readStats || null,
+        '/api/contributions': contributionsCalendar || null,
       },
     },
     revalidate: 300,
