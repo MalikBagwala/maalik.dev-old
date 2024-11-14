@@ -39,14 +39,18 @@ export async function fetchContributions() {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${process.env.GITHUB_READ_USER_TOKEN_PERSONAL}`, // replace with your token or any other header you need
     },
-  }).then((data) => data.json());
+  })
+    .then((data) => data.json())
+    .catch((error) => console.log('GitHub Error', error));
 
   const githubData =
     response.data?.user?.contributionsCollection?.contributionCalendar;
 
   const gitlabResponse = await fetch(
     `https://maalik.dev/api/proxy/https://gitlab.com/users/MalikBagwala/calendar.json`,
-  ).then((data) => data.json());
+  )
+    .then((data) => data.json())
+    .catch((error) => console.log('GitLab Error', error));
 
   return combineContributions(githubData, gitlabResponse);
 }
